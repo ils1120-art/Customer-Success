@@ -1,0 +1,23 @@
+# Secrets & credentials
+.env
+credentials.json
+token.json
+*.pem
+
+# Agent state
+state/
+*.state.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
