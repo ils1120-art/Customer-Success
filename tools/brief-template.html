@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AURELLE 캠페인 브리프</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF; --ink:#0D0D0C; --ink2:#5C5C58; --ink3:#8E8E88;
+  --rule:#E2E2DE; --rule2:#C9C9C3; --fill:#F5F5F2;
+  --todo:#7A5B00; --todo-bg:#FBF0CF;
+  color-scheme:light;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0C0C0B; --ink:#EDEDEA; --ink2:#A3A39C; --ink3:#77776F;
+  --rule:#26261F; --rule2:#3A3A31; --fill:#151513;
+  --todo:#E8C767; --todo-bg:#2A2312;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Archivo","Noto Sans KR",system-ui,sans-serif;
+  font-size:15.5px; line-height:1.72; letter-spacing:-.004em; word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* ---------- shell ---------- */
+.shell{display:block}
+@media(min-width:1040px){
+  .shell{display:grid;grid-template-columns:268px minmax(0,1fr);align-items:start}
+}
+
+/* ---------- sidebar ---------- */
+.side{
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+  position:sticky; top:0; z-index:30;
+}
+@media(min-width:1040px){
+  .side{
+    position:sticky; top:0; height:100vh; overflow-y:auto;
+    border-right:1px solid var(--rule); border-bottom:0;
+    padding:34px 26px 40px;
+  }
+}
+.brand{padding:14px 20px 0;display:flex;align-items:baseline;gap:10px}
+@media(min-width:1040px){.brand{padding:0 0 26px}}
+.brand b{
+  font-family:"Archivo",sans-serif;font-weight:800;font-size:15px;
+  font-stretch:112%; letter-spacing:-.02em; text-transform:uppercase;
+}
+.brand span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink3);letter-spacing:.1em}
+
+.tabs{display:flex;gap:0;padding:10px 20px 0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+@media(min-width:1040px){.tabs{display:block;padding:0;border-top:1px solid var(--rule)}}
+.tab{
+  appearance:none;background:none;border:0;cursor:pointer;
+  font-family:inherit;font-size:13.5px;font-weight:500;color:var(--ink3);
+  padding:12px 16px 12px 0;white-space:nowrap;text-align:left;
+  display:flex;align-items:baseline;gap:9px;letter-spacing:-.01em;
+}
+@media(min-width:1040px){.tab{width:100%;border-bottom:1px solid var(--rule);padding:13px 0}}
+.tab .tn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink3);letter-spacing:.06em}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--ink);font-weight:700}
+.tab.on .tn{color:var(--ink)}
+
+.navset{display:none}
+.navset.on{display:none}
+@media(min-width:1040px){
+  .navset{display:none;padding-top:24px}
+  .navset.on{display:block}
+}
+.nl{
+  display:block;text-decoration:none;color:var(--ink2);
+  font-size:13px;line-height:1.5;padding:5px 0;letter-spacing:-.01em;
+}
+.nl.h2{font-weight:700;color:var(--ink);margin-top:14px;font-size:13.5px}
+.nl:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- main ---------- */
+.main{padding-inline:20px;padding-block:0 100px;min-width:0}
+@media(min-width:1040px){.main{padding-inline:64px}}
+.wrap{max-width:820px;margin:0 auto}
+
+/* cover */
+.cover{padding-block:52px 0;border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:26px;
+}
+.cover h1{
+  font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-weight:800;font-stretch:118%;
+  font-size:clamp(34px,6.4vw,62px);line-height:1.02;letter-spacing:-.035em;
+  margin:0 0 34px;text-wrap:balance;
+}
+.cover-body{padding-bottom:44px}
+
+/* doc panes */
+.doc{display:none}
+.doc.on{display:block}
+.dh{padding-block:52px 40px;border-bottom:1px solid var(--rule);margin-bottom:8px}
+.dn{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;
+}
+.dh h1{
+  font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:800;font-stretch:118%;
+  font-size:clamp(28px,5vw,48px);line-height:1.04;letter-spacing:-.03em;margin:0;
+}
+
+/* typography */
+h2,h3,h4{font-family:"Archivo","Noto Sans KR",sans-serif;letter-spacing:-.022em;text-wrap:balance}
+h2{font-size:clamp(21px,3vw,27px);font-weight:700;margin:56px 0 16px;padding-top:26px;border-top:1px solid var(--rule)}
+h3{font-size:clamp(18px,2.4vw,22px);font-weight:700;margin:46px 0 14px}
+h4{font-size:16px;font-weight:700;margin:30px 0 10px}
+p{margin:0 0 15px;max-width:72ch}
+ul,ol{margin:0 0 16px;padding-left:20px;max-width:72ch}
+li{margin-bottom:7px}
+li::marker{color:var(--ink3)}
+strong{font-weight:700}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+
+blockquote{
+  margin:22px 0;padding:2px 0 2px 20px;border-left:2px solid var(--ink);
+  color:var(--ink2);font-size:14.5px;max-width:72ch;
+}
+blockquote p{margin-bottom:9px}
+blockquote p:last-child{margin-bottom:0}
+blockquote strong{color:var(--ink)}
+
+code{
+  font-family:"IBM Plex Mono",monospace;font-size:.86em;
+  background:var(--fill);border:1px solid var(--rule);border-radius:2px;
+  padding:1px 5px;white-space:nowrap;
+}
+
+/* tables */
+table{
+  border-collapse:collapse;width:100%;font-size:13.5px;line-height:1.56;
+  margin:18px 0 26px;font-variant-numeric:tabular-nums;
+}
+thead th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink3);padding:0 16px 10px 0;border-bottom:1px solid var(--rule2);
+  white-space:nowrap;vertical-align:bottom;
+}
+tbody td{padding:13px 16px 13px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:1px solid var(--rule2)}
+th:last-child,td:last-child{padding-right:0}
+.scroll{overflow-x:auto;margin-bottom:26px}
+.scroll table{margin-bottom:0;min-width:560px}
+
+/* placeholder tag */
+.todo{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.04em;color:var(--todo);background:var(--todo-bg);
+  border-radius:2px;padding:2px 7px;white-space:nowrap;vertical-align:1px;
+}
+
+/* count badge */
+.meta{
+  display:flex;flex-wrap:wrap;gap:8px 22px;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;letter-spacing:.06em;color:var(--ink3);
+  padding-block:20px;border-top:1px solid var(--rule);margin-top:60px;
+}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .side{display:none}
+  .doc{display:block!important;break-before:page}
+  .main{padding:0}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="side" aria-label="문서 목차">
+    <div class="brand"><b>AURELLE</b><span>BRIEF SET</span></div>
+    <div class="tabs" role="tablist"><!--TABS--></div>
+    <!--NAV-->
+  </nav>
+
+  <main class="main">
+    <div class="wrap">
+
+      <header class="cover">
+        <div class="eyebrow">Trendier AI · GTM Output · 가상 브랜드 예시</div>
+        <h1>AURELLE Glow Drop Serum<br>미국 캠페인 브리프</h1>
+        <div class="cover-body"><!--COVER--></div>
+      </header>
+
+      <!--PANES-->
+
+      <div class="meta">
+        <span>Trendier AI</span><span>Campaign · Creator · Product Brief</span><span id="tc"></span>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var docs=[].slice.call(document.querySelectorAll('.doc'));
+  var navs=[].slice.call(document.querySelectorAll('.navset'));
+  function show(i){
+    tabs.forEach(function(t){t.classList.toggle('on', +t.dataset.i===i);});
+    docs.forEach(function(d){d.classList.toggle('on', +d.dataset.i===i);});
+    navs.forEach(function(n){n.classList.toggle('on', +n.dataset.i===i);});
+    try{localStorage.setItem('aurelle-doc', i);}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.dataset.i);window.scrollTo(0,0);});});
+  var saved=null; try{saved=localStorage.getItem('aurelle-doc');}catch(e){}
+  if(saved!==null && tabs[+saved]) show(+saved);
+
+  // anchor links inside the sidebar should open the right pane first
+  document.querySelectorAll('.nl').forEach(function(a){
+    a.addEventListener('click',function(){
+      var id=a.getAttribute('href').slice(1);
+      var el=document.getElementById(id);
+      if(!el) return;
+      var pane=el.closest('.doc');
+      if(pane) show(+pane.dataset.i);
+    });
+  });
+
+  var n=document.querySelectorAll('.todo').length;
+  var tc=document.getElementById('tc');
+  if(tc) tc.textContent='입력 필요 ' + n + '곳';
+})();
+</script>
+</body>
+</html>
