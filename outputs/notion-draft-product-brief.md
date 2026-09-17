@@ -1,106 +1,111 @@
-# AURELLE Glow Drop Serum
+# AURELLE Glow Drop Serum 제품 브리프
 
-> Creator-facing product brief. Pairs with the campaign concept brief (Korean, internal).
-> Sections marked **(TO BE PROVIDED)** need brand-supplied data before this goes out to creators.
+> DB 속성 — BRAND: AURELLE(가상) / 종류: 콘텐츠, 가이드라인, 컨셉 브리프 / 기간: (입력 필요)
+> 세트 문서 — **캠페인 컨셉 브리프**와 함께 운용
+> **(입력 필요)** 구간은 브랜드 데이터 확보 후 작성. 확보 전 크리에이터 배포 금지
+> 미국 크리에이터 전달 시 영문화 필요
 
-**Amazon Product Link** — (TO BE PROVIDED)
-**Retailer Product Link** — (TO BE PROVIDED)
+**Amazon 제품 링크** — (입력 필요)
+**리테일러 제품 링크** — (입력 필요)
 
-## 🫐 AURELLE Brand Introduction {toggle}
+## 🫐 AURELLE 브랜드 소개
 
-**AURELLE** takes its name from **Aura** — the light that sits on skin — and **Réel** — real.
-A skincare brand built around how skin actually looks in the morning, not under studio light.
+- 브랜드명: **Aura**(피부 위에 얹히는 빛) + **Réel**(진짜)
+- 스튜디오 조명이 아니라 **아침의 실제 피부**를 기준으로 삼는 브랜드
 
 **📌 Core Brand Values**
-✔️ **Texture First** — formulas judged by how they feel going on, not by claims on the box
-✔️ **Two Skins, One Bottle** — made for people whose skin shifts between dry and oily
-✔️ **No Overpromise** — we publish what testing shows, and nothing beyond it
+✔️ **Texture First** — 상자에 적힌 문구가 아니라 바를 때의 감촉으로 판단
+✔️ **Two Skins, One Bottle** — 건성과 지성을 오가는 피부를 위해
+✔️ **No Overpromise** — 시험으로 확인된 것까지만 말함
 
-## 💧 What This Serum Solves {toggle}
+## 💧 이 세럼이 해결하는 것
 
-Have you had any of these mornings? Share the one that sounds like you.
+> 어떤 아침이 본인 얘기인지 골라서 이야기해주세요
 
-| Pain Points | Solutions |
+| 소비자 고민 | 솔루션 |
 |---|---|
-| **Tight, dry after cleansing** — skin feels drawn before you've even started | (TO BE PROVIDED — hydrating actives) |
-| **Shiny by midday** — fine in the morning, oily a few hours in | (TO BE PROVIDED — oil-balancing actives) |
-| **Heavy under makeup** — serums that pill, sit on top, or slow the routine down | (TO BE PROVIDED — texture / absorption data) |
-| **Reactive skin** — products that sting, redden, or break skin out | (TO BE PROVIDED — irritation testing) |
+| **세안 후 당김** — 시작도 전에 피부가 땅김 | (입력 필요 — 보습 성분) |
+| **오후의 번들거림** — 아침엔 괜찮다가 몇 시간 뒤 유분 | (입력 필요 — 유분 조절 성분) |
+| **메이크업 아래 무거움** — 밀리거나 겉돌아 루틴이 느려짐 | (입력 필요 — 제형·흡수 데이터) |
+| **예민한 피부** — 따갑거나 붉어지거나 트러블 | (입력 필요 — 자극 시험) |
 
-> Pain points drawn from US customer reviews (Amazon US, Ulta US, last 6 months).
-> Ingredient solutions to be supplied by the brand.
+> 소비자 고민: 미국 리뷰 분석 (Amazon US, Ulta US, 최근 6개월)
+> 솔루션 컬럼: 브랜드 제공 필요
 
-## 🌿 Why One Bottle for Two Skin Types {toggle}
+## 🌿 한 병으로 두 피부 타입
 
-Most serums ask you to pick a side. Dry skin here, oily skin there.
+- 대부분의 세럼은 건성용과 지성용 중 하나를 고르게 함
+- 이 제품 리뷰에는 **둘 다 있음** — 자기 피부를 건성이라고 말하는 사람과 지성이라고 말하는 사람이 같은 병을 리뷰
+- 두 쪽 모두 같은 지점을 언급: **가볍게 발리고 빠르게 사라진다**
 
-In this product's reviews, both show up. People who describe their skin as **dry** and people who describe it as **oily** are reviewing the same bottle — and both describe the same thing about it: it goes on light and disappears fast.
+> 이 캠페인의 출발점. 모든 피부에서 같은 결과가 난다고 주장하는 것이 아니라,
+> 피부가 정반대인 두 사람이 한 병을 쓰는 모습을 보여주고 각자의 말로 표현하게 하는 것
 
-<callout>
-That's the whole idea behind this campaign. We're not claiming it works the same on every face. We're showing two people whose skin is nothing alike, using one bottle, and letting them describe it in their own words.
-</callout>
+**말할 수 있는 것**
+✔️ 건성 리뷰어와 지성 리뷰어가 모두 사용 중
+✔️ 가장 많이 나온 표현 — 촉촉하다 · 광이 난다 · 스며든다 · 가볍다 · 매끈하다
 
-**What we can say**
-✔️ Reviewers with dry skin and reviewers with oily skin both use it
-✔️ The words that come up most are *hydrate*, *glow*, *absorb*, *lightweight*, *smooth*
+**아직 말할 수 없는 것**
+✖️ 모든 피부 타입에 맞는다 — 뒷받침할 시험 없음
+✖️ 유분을 잡아준다 / 건조를 해결한다 — 효능 주장, 임상 데이터 확보 전까지 금지
 
-**What we can't say yet**
-✖️ That it suits every skin type — no testing to back that
-✖️ That it controls oil or treats dryness — those are efficacy claims, pending clinical data
+## 📊 경쟁 제품 비교
 
-## 📊 How It Compares {toggle}
-
-| Brand | Key active % | Fungal acne safe? | Non-comedogenic? | Plant-based? | Size / Price |
+| 브랜드 | 핵심 성분 함량 | 진균성 여드름 안전 | 논코메도제닉 | 식물 유래 | 용량 / 가격 |
 |---|---|---|---|---|---|
-| **AURELLE** | (TO BE PROVIDED) | (TO BE PROVIDED) | (TO BE PROVIDED) | (TO BE PROVIDED) | 30ml / (TO BE PROVIDED) |
-| (TO BE PROVIDED) | | | | | |
-| (TO BE PROVIDED) | | | | | |
-| (TO BE PROVIDED) | | | | | |
+| **AURELLE** | (입력 필요) | (입력 필요) | (입력 필요) | (입력 필요) | 30ml / (입력 필요) |
+| (입력 필요) | | | | | |
+| (입력 필요) | | | | | |
+| (입력 필요) | | | | | |
 
-> Competitor set and specs to be confirmed with the brand. Pick competitors the US shopper is actually cross-shopping, not the category leaders by revenue.
+> 비교 대상은 매출 상위 브랜드가 아니라 **미국 소비자가 실제로 함께 놓고 고민하는 제품**으로 선정
+> 비교 항목과 수치는 브랜드 확인 필요
 
-## 🌟 What Makes Ours Different {toggle}
+## 🌟 이 제품의 차별점
 
-### 1️⃣ It's gone before your next step
-Reviewers describe it as **lightweight** and **fast-absorbing**. No waiting around before sunscreen or makeup.
-*Absorption time and layering data: (TO BE PROVIDED)*
+### 1️⃣ 다음 단계 전에 이미 사라짐
+- 리뷰어 표현: **가볍다 · 빠르게 스며든다**
+- 선스크린이나 메이크업 전에 기다릴 필요 없음
+- *흡수 시간 및 레이어링 데이터: (입력 필요)*
 
-### 2️⃣ Two skin types, one bottle
-Dry and oily reviewers are both in this product's reviews. Rare enough to build a campaign on.
+### 2️⃣ 두 피부 타입, 한 병
+- 건성 리뷰어와 지성 리뷰어가 같은 제품 리뷰에 공존
+- 캠페인을 세울 만큼 드문 경우
 
-### 3️⃣ It fits the routine you already have
-Reviewers mention it alongside **sunscreen** and **under makeup**. We don't prescribe an order — it just goes where it goes.
-*Wear time, pilling and layering tests: (TO BE PROVIDED)*
+### 3️⃣ 이미 쓰는 루틴 안에 들어감
+- 리뷰에서 **선스크린**, **메이크업 아래** 맥락으로 언급됨
+- 사용 순서를 규정하지 않음
+- *지속력·밀림·레이어링 시험: (입력 필요)*
 
-## 📌 FAQ {toggle}
+## 📌 FAQ
 
-**Q. How often should I use it?**
-**A.** (TO BE PROVIDED)
+**Q. 얼마나 자주 쓰면 되나요?**
+**A.** (입력 필요)
 
-**Q. Can I wear it under makeup?**
-**A.** Reviewers mention using it under makeup. We haven't tested wear time or pilling, so we don't claim it holds up — show what happens on your own face.
+**Q. 메이크업 아래 발라도 되나요?**
+**A.** 메이크업과 함께 쓴다는 리뷰가 있습니다. 다만 지속력이나 밀림은 시험한 바 없어 보장하지 않습니다. 본인 피부에서 어떻게 되는지를 보여주세요.
 
-**Q. Can I use it with sunscreen?**
-**A.** Both come up in the same routines in reviews. We don't specify an order, and we don't claim they layer without pilling.
+**Q. 선스크린과 같이 써도 되나요?**
+**A.** 같은 루틴에 등장하는 리뷰가 있습니다. 순서를 지정하지 않으며, 밀리지 않는다고 주장하지 않습니다.
 
-**Q. Is it safe for sensitive skin?**
-**A.** Some reviewers who call their skin sensitive use it. Others reported stinging, redness or itching. **We don't claim it's non-irritating.** Patch test first, and stop if it stings.
+**Q. 민감성 피부도 괜찮나요?**
+**A.** 민감하다고 밝힌 리뷰어 중 사용하는 분들이 있습니다. 반대로 따갑거나 붉어지거나 가렵다는 리뷰도 있습니다. **무자극이라고 주장하지 않습니다.** 패치 테스트 후 사용하고, 따가우면 중단하세요.
 
-**Q. Will it break me out?**
-**A.** (TO BE PROVIDED — non-comedogenic testing)
+**Q. 트러블이 나지는 않나요?**
+**A.** (입력 필요 — 논코메도제닉 시험)
 
-**Q. Is it vegan / cruelty-free?**
-**A.** (TO BE PROVIDED)
+**Q. 비건인가요? 크루얼티 프리인가요?**
+**A.** (입력 필요)
 
-## 🗒️ All Ingredients & Clinical Results {toggle}
+## 🗒️ 전성분 및 임상 결과
 
-**✅ All Ingredients**
-(TO BE PROVIDED)
+**✅ 전성분**
+(입력 필요)
 
-**✅ Clinical Results**
-(TO BE PROVIDED)
+**✅ 임상 결과**
+(입력 필요)
 
 ---
 
-> **Until this last section is filled, creators may not make efficacy or safety claims.**
-> The banned-phrase list in the campaign brief stays in force. Once clinical results are in, that list gets revised — not before.
+> **이 마지막 섹션이 채워지기 전까지 크리에이터는 효능·안전성 주장을 할 수 없습니다.**
+> 캠페인 브리프의 금지어 목록이 그대로 유효합니다. 임상 결과 확보 후 목록을 재검토하되, 그 전에는 변경하지 않습니다.
