@@ -3,256 +3,213 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>바른 다음 10초</title>
+<title>같은 병, 다른 피부</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap">
 <style>
 :root{
-  --paper:#FCFCFB;
-  --surface:#F1F2F4;
-  --surface-2:#E7E9ED;
-  --ink:#15181D;
-  --ink-2:#4E555F;
-  --ink-3:#7C848F;
-  --rule:#DCDFE5;
-  --rule-strong:#C3C8D1;
-  --accent:#24415C;
-  --accent-ink:#1B3049;
-  --accent-soft:#E7EEF5;
-  --caution:#9A4326;
-  --caution-soft:#F7EAE3;
-  --flag:#6B5410;
-  --flag-soft:#F5EFDC;
-  --shadow:0 1px 2px rgba(21,24,29,.05);
+  --paper:#F8F8F7;
+  --surface:#EFF0EF;
+  --surface-2:#E4E6E4;
+  --ink:#131615;
+  --ink-2:#4B524F;
+  --ink-3:#7B837F;
+  --rule:#DBDEDB;
+  --rule-strong:#BFC4C1;
+  --glow:#C77C17;
+  --glow-text:#8A5409;
+  --glow-soft:#F6EBD9;
+  --dark:#16181A;
+  --dark-ink:#F2F1EE;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#131519;
-    --surface:#1B1E24;
-    --surface-2:#242830;
-    --ink:#E9EBEF;
-    --ink-2:#A6AEBA;
-    --ink-3:#7E8794;
-    --rule:#2A2F38;
-    --rule-strong:#3A414C;
-    --accent:#8FB4D6;
-    --accent-ink:#B9D2E9;
-    --accent-soft:#1B2A39;
-    --caution:#DC9070;
-    --caution-soft:#2E2018;
-    --flag:#D6B75C;
-    --flag-soft:#2B2513;
-    --shadow:0 1px 2px rgba(0,0,0,.35);
+    --paper:#111312; --surface:#191C1B; --surface-2:#222625;
+    --ink:#EDEEEC; --ink-2:#A5ADA9; --ink-3:#7E8783;
+    --rule:#282D2B; --rule-strong:#3A403D;
+    --glow:#E5A648; --glow-text:#EFBF77; --glow-soft:#2A2115;
+    --dark:#0B0D0C; --dark-ink:#F2F1EE;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#131519; --surface:#1B1E24; --surface-2:#242830;
-  --ink:#E9EBEF; --ink-2:#A6AEBA; --ink-3:#7E8794;
-  --rule:#2A2F38; --rule-strong:#3A414C;
-  --accent:#8FB4D6; --accent-ink:#B9D2E9; --accent-soft:#1B2A39;
-  --caution:#DC9070; --caution-soft:#2E2018;
-  --flag:#D6B75C; --flag-soft:#2B2513;
-  --shadow:0 1px 2px rgba(0,0,0,.35);
+  --paper:#111312; --surface:#191C1B; --surface-2:#222625;
+  --ink:#EDEEEC; --ink-2:#A5ADA9; --ink-3:#7E8783;
+  --rule:#282D2B; --rule-strong:#3A403D;
+  --glow:#E5A648; --glow-text:#EFBF77; --glow-soft:#2A2115;
+  --dark:#0B0D0C; --dark-ink:#F2F1EE;
   color-scheme:dark;
 }
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:"IBM Plex Sans","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:15px;
-  line-height:1.72;
-  letter-spacing:-.003em;
-  word-break:keep-all;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15.5px;line-height:1.76;letter-spacing:-.003em;word-break:keep-all;
 }
 img{max-width:100%}
+h1,h2,h3{font-family:"Fraunces","Noto Serif KR",Georgia,serif;font-weight:600;margin:0;line-height:1.2;text-wrap:balance;letter-spacing:-.022em}
+p{margin:0 0 15px;max-width:66ch}
+ul{margin:0 0 15px;padding-left:19px;max-width:66ch}
+li{margin-bottom:7px}
+li::marker{color:var(--glow)}
+a{color:var(--glow-text);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-h1,h2,h3,h4{font-family:"Fraunces","Noto Serif KR",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;line-height:1.28;letter-spacing:-.015em}
+.label{
+  font-family:"Barlow Condensed","Noto Sans KR",sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--ink-3);
+}
 
-.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
-
-/* ---------- nav ---------- */
-.topbar{
-  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
-  background:var(--paper);
-  background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:saturate(1.4) blur(10px);
-  border-bottom:1px solid var(--rule);
-}
-.topbar-in{
-  max-width:1120px;margin:0 auto;padding:9px 20px;
-  display:flex;align-items:baseline;gap:18px;
-}
-.topbar .mark{
-  font-family:"Fraunces","Noto Serif KR",serif;font-size:14px;font-weight:600;
-  white-space:nowrap;flex:0 0 auto;
-}
-.topbar nav{
-  display:flex;gap:14px;overflow-x:auto;scrollbar-width:none;
-  font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
-}
+/* nav */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:var(--paper);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:1080px;margin:0 auto;padding:10px 22px;display:flex;gap:20px;align-items:baseline}
+.topbar .mark{font-family:"Fraunces","Noto Serif KR",serif;font-weight:600;font-size:15px;white-space:nowrap}
+.topbar nav{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none}
 .topbar nav::-webkit-scrollbar{display:none}
-.topbar nav a{color:var(--ink-3);text-decoration:none;white-space:nowrap;padding:2px 0;border-bottom:1px solid transparent}
-.topbar nav a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+.topbar nav a{font-family:"Barlow Condensed",sans-serif;font-size:13.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);text-decoration:none;white-space:nowrap;
+  border-bottom:1px solid transparent;padding-bottom:1px}
+.topbar nav a:hover{color:var(--ink);border-bottom-color:var(--glow)}
 
-.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:0 72px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:22px;padding-block:0 80px}
 
-/* ---------- cover ---------- */
-.cover{padding-block:46px 30px;border-bottom:2px solid var(--ink)}
-.eyebrow{
-  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink-3);font-weight:500;margin-bottom:22px;
-  display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;
-}
-.tag{
-  display:inline-block;padding:2px 8px;border-radius:2px;
-  background:var(--flag-soft);color:var(--flag);
-  font-size:10.5px;letter-spacing:.1em;font-weight:600;
-}
-h1{font-size:clamp(34px,7.4vw,62px);line-height:1.08;letter-spacing:-.03em}
-h1 .en{display:block;font-size:.4em;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-top:14px}
-.lede{
-  max-width:60ch;margin-top:24px;font-size:clamp(16px,2.3vw,19px);
-  line-height:1.66;color:var(--ink-2);
-}
-.lede b{color:var(--ink);font-weight:600}
+/* cover */
+.cover{padding-block:56px 40px}
+.kicker{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:30px}
+.chip{display:inline-block;font-family:"Barlow Condensed",sans-serif;font-size:12.5px;
+  font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  background:var(--glow-soft);color:var(--glow-text);padding:3px 9px;border-radius:2px}
+h1{font-size:clamp(40px,9vw,86px);line-height:.98;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--glow)}
+.h1sub{font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:clamp(15px,2.6vw,21px);
+  letter-spacing:.3em;text-transform:uppercase;color:var(--ink-3);margin-top:20px}
+.standfirst{margin-top:30px;font-size:clamp(17px,2.5vw,21px);line-height:1.62;
+  max-width:44ch;color:var(--ink-2);font-family:"Fraunces","Noto Serif KR",serif}
+.standfirst b{color:var(--ink);font-weight:600}
 
-.meta{
-  display:grid;gap:0 32px;margin-top:34px;
-  grid-template-columns:repeat(auto-fit,minmax(205px,1fr));
-  border-top:1px solid var(--rule);
-}
-.meta div{padding:12px 0;border-bottom:1px solid var(--rule)}
-.meta dt{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:3px}
-.meta dd{margin:0;font-size:14px;font-weight:500}
+/* overview */
+.overview{display:grid;gap:0 36px;margin-top:44px;border-top:2px solid var(--ink);
+  grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.overview div{padding:13px 0;border-bottom:1px solid var(--rule)}
+.overview dt{font-family:"Barlow Condensed",sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.overview dd{margin:2px 0 0;font-size:15px;font-weight:500}
 
-/* ---------- sections ---------- */
-section{padding-block:52px;border-bottom:1px solid var(--rule)}
-section:last-of-type{border-bottom:0}
-.sec-head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
-.stage{
-  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--accent);
-  border:1px solid var(--accent);border-radius:2px;padding:1px 7px;flex:0 0 auto;
-}
-h2{font-size:clamp(23px,3.6vw,31px)}
-.sec-sub{max-width:62ch;color:var(--ink-2);margin-top:12px}
-h3{font-size:17px;margin-top:34px;margin-bottom:10px}
-h4{font-family:"IBM Plex Sans","Noto Sans KR",sans-serif;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-top:26px;margin-bottom:8px}
-p{margin:0 0 14px;max-width:70ch}
-ul,ol{margin:0 0 14px;padding-left:20px;max-width:70ch}
-li{margin-bottom:6px}
-li::marker{color:var(--ink-3)}
+section{padding-block:60px;border-top:1px solid var(--rule)}
+.sec-label{margin-bottom:14px}
+h2{font-size:clamp(26px,4.4vw,40px);margin-bottom:18px}
+h3{font-size:19px;margin:0 0 9px}
+.intro{max-width:56ch;font-size:16.5px;color:var(--ink-2)}
 
-/* ---------- decision ---------- */
-.decision{
-  margin-top:40px;border:2px solid var(--ink);background:var(--surface);
-  padding:24px 26px;
-}
-.decision h4{margin-top:0;color:var(--ink)}
-.decision ol{counter-reset:d;list-style:none;padding:0;margin:0;max-width:none;
-  display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.decision li{counter-increment:d;margin:0;padding-left:30px;position:relative;font-size:14.5px;line-height:1.6}
-.decision li::before{
-  content:counter(d);position:absolute;left:0;top:1px;
-  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;
-  width:20px;height:20px;display:grid;place-items:center;
-  border:1px solid var(--rule-strong);border-radius:50%;color:var(--ink-2);
-}
-.decision li b{display:block;font-weight:600;margin-bottom:2px}
+/* why */
+.why p{font-size:16.5px;max-width:58ch}
+.why p:first-of-type{font-size:19px;line-height:1.66;color:var(--ink)}
+.why strong{font-weight:600;box-shadow:inset 0 -.4em 0 var(--glow-soft)}
 
-/* ---------- tables ---------- */
-.scroll{overflow-x:auto;margin:16px 0 22px;border:1px solid var(--rule);background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px;line-height:1.56}
-thead th{
-  text-align:left;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--ink-3);padding:10px 14px;border-bottom:1px solid var(--rule-strong);
-  background:var(--surface-2);white-space:nowrap;vertical-align:bottom;
-}
-tbody td{padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+/* concept spread */
+.spread{background:var(--dark);color:var(--dark-ink);margin-block:8px 0;
+  padding:clamp(28px,5vw,56px);border-radius:3px}
+.spread .label{color:rgba(242,241,238,.5)}
+.spread h2{color:var(--dark-ink);margin-bottom:8px;font-size:clamp(28px,5.6vw,52px)}
+.spread .en{font-family:"Barlow Condensed",sans-serif;letter-spacing:.26em;text-transform:uppercase;
+  font-size:clamp(13px,2vw,17px);color:var(--glow);margin-bottom:34px}
+.spread-grid{display:grid;gap:30px 40px;grid-template-columns:1fr;
+  border-top:1px solid rgba(242,241,238,.16);padding-top:30px}
+@media(min-width:700px){.spread-grid{grid-template-columns:1fr 1fr}}
+.spread-grid h3{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--glow);margin-bottom:9px}
+.spread-grid p{font-size:15px;line-height:1.7;margin:0;color:rgba(242,241,238,.88);max-width:none}
+.spread-grid p b{color:#fff;font-weight:600}
+
+/* storyboard */
+.board{display:grid;gap:18px;margin-top:26px;
+  grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+.frame{display:flex;flex-direction:column;gap:11px}
+.frame .box{aspect-ratio:9/16;max-width:100%;background:var(--surface);
+  border:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;
+  padding:14px;position:relative}
+.frame .no{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.14em;color:var(--glow-text)}
+.frame .shot{font-family:"Fraunces","Noto Serif KR",serif;font-size:17px;font-weight:600;
+  line-height:1.24;letter-spacing:-.015em}
+.frame .time{font-family:"Barlow Condensed",sans-serif;font-size:12.5px;letter-spacing:.13em;
+  color:var(--ink-3);text-transform:uppercase}
+.frame .dir{font-size:13.5px;line-height:1.62;color:var(--ink-2);margin:0}
+
+/* concept cards */
+.concepts{display:grid;gap:22px;margin-top:26px;grid-template-columns:repeat(auto-fit,minmax(276px,1fr))}
+.card{border:1px solid var(--rule);border-top:3px solid var(--glow);background:var(--surface);
+  padding:24px 24px 26px;display:flex;flex-direction:column;gap:16px}
+.card .role{font-family:"Barlow Condensed",sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.card h3{font-size:21px;margin:0}
+.card .oneline{font-size:15px;color:var(--ink-2);margin:0;max-width:none}
+.card .block{border-top:1px solid var(--rule);padding-top:14px}
+.card .block .label{display:block;margin-bottom:8px;font-size:12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tags span{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:500;
+  background:var(--glow-soft);color:var(--glow-text);padding:3px 10px;border-radius:99px}
+.card ol{margin:0;padding-left:18px;font-size:14px;line-height:1.66;color:var(--ink-2)}
+.card ol li{margin-bottom:5px}
+.card ol li::marker{color:var(--glow);font-family:"Barlow Condensed",sans-serif}
+
+/* casting */
+.cast{display:grid;gap:0;margin-top:22px;border-top:1px solid var(--rule)}
+.cast-row{display:grid;gap:6px 28px;padding:18px 0;border-bottom:1px solid var(--rule);
+  grid-template-columns:1fr}
+@media(min-width:720px){.cast-row{grid-template-columns:minmax(210px,1fr) 2fr}}
+.cast-row h3{font-size:16.5px;font-family:"IBM Plex Sans","Noto Sans KR",sans-serif;font-weight:600;margin:0}
+.cast-row p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:none}
+
+/* do/dont */
+.dd{display:grid;gap:24px;margin-top:24px;grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.dd-col{padding:24px;border:1px solid var(--rule)}
+.dd-col.do{background:var(--glow-soft);border-color:transparent}
+.dd-col h3{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.dd-col.do h3{color:var(--glow-text)}
+.dd-col ul{margin:0;padding-left:18px}
+.dd-col li{font-size:14.5px;line-height:1.66}
+.dd-col.do li::marker{color:var(--glow-text)}
+.dd-col.dont li::marker{color:var(--ink-3)}
+.dd-col.dont li{color:var(--ink-2)}
+
+/* measure */
+.kpi{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--rule)}
+.kpi-row{display:grid;gap:4px 24px;padding:15px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+@media(min-width:660px){.kpi-row{grid-template-columns:150px 1fr}}
+.kpi-row .k{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--glow-text)}
+.kpi-row .v{font-size:15px;color:var(--ink-2)}
+
+/* appendix */
+.appendix{margin-top:64px;padding:34px 30px;background:var(--surface);border:1px solid var(--rule)}
+.appendix h2{font-size:25px}
+.appendix p,.appendix li{font-size:14px;color:var(--ink-2)}
+.appendix p{max-width:64ch}
+.scroll{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--rule);background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px}
+thead th{text-align:left;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  padding:9px 14px;border-bottom:1px solid var(--rule-strong);white-space:nowrap}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
 tbody tr:last-child td{border-bottom:0}
-td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
-td strong{font-weight:600}
-.tbl-note{font-size:12px;color:var(--ink-3);margin:-12px 0 24px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.word{font-family:"IBM Plex Sans",sans-serif;font-weight:500}
 
-/* ---------- tokens ---------- */
-code, .tok{
-  font-family:"IBM Plex Mono",monospace;font-size:.88em;
-  background:var(--surface-2);border-radius:2px;padding:1px 5px;
-  color:var(--ink);white-space:nowrap;
-}
-.tok.pos{background:var(--accent-soft);color:var(--accent-ink)}
-.tok.neg{background:var(--caution-soft);color:var(--caution)}
-
-/* ---------- callouts ---------- */
-.note{
-  border-left:2px solid var(--rule-strong);padding:2px 0 2px 16px;
-  margin:20px 0;color:var(--ink-2);font-size:13.5px;max-width:70ch;
-}
-.note.warn{border-left-color:var(--caution)}
-.note.flag{border-left-color:var(--flag)}
-.note b{color:var(--ink)}
-
-.nodata{
-  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;
-  letter-spacing:.04em;color:var(--caution);background:var(--caution-soft);
-  border-radius:2px;padding:1px 6px;
-}
-.tbd{
-  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;
-  letter-spacing:.04em;color:var(--flag);background:var(--flag-soft);
-  border-radius:2px;padding:1px 6px;
-}
-
-/* ---------- big idea ---------- */
-.bigidea{
-  margin:26px 0 10px;padding:32px 30px;background:var(--ink);color:var(--paper);
-}
-.bigidea .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.62;margin-bottom:14px}
-.bigidea p{font-family:"Fraunces","Noto Serif KR",serif;font-size:clamp(22px,4.4vw,34px);
-  line-height:1.3;margin:0;max-width:22ch;font-weight:600;letter-spacing:-.02em}
-.bigidea .why{font-family:"IBM Plex Sans","Noto Sans KR",sans-serif;font-size:14px;
-  line-height:1.66;margin-top:18px;max-width:58ch;opacity:.78;font-weight:400}
-
-/* ---------- two-col ---------- */
-.cols{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:18px}
-.panel{border:1px solid var(--rule);padding:20px 22px;background:var(--surface)}
-.panel.ok{border-top:2px solid var(--accent)}
-.panel.no{border-top:2px solid var(--caution)}
-.panel h4{margin-top:0}
-.panel ul{padding-left:18px;margin-bottom:0}
-.panel li{font-size:13.5px;line-height:1.6}
-.panel li small{display:block;color:var(--ink-3);font-size:11.5px;line-height:1.5;margin-top:1px}
-
-/* ---------- timeline ---------- */
-.beats{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:18px 0 8px}
-.beat{background:var(--surface);padding:16px 18px;display:grid;gap:4px}
-.beat .t{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--accent);font-weight:500}
-.beat .h{font-weight:600;font-size:14px}
-.beat p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6;max-width:none}
-@media(min-width:760px){.beats{grid-template-columns:repeat(4,1fr)}}
-
-/* ---------- appendix ---------- */
-.appendix{border:2px solid var(--ink);padding:28px 26px;margin-top:44px;background:var(--surface)}
-.appendix h2{font-size:23px}
-.appendix .scroll{border-color:var(--rule-strong)}
-
-footer{padding-block:34px;color:var(--ink-3);font-size:12.5px;line-height:1.7}
+footer{padding-block:38px;color:var(--ink-3);font-size:13px;line-height:1.78;border-top:1px solid var(--rule);margin-top:60px}
 footer b{color:var(--ink-2);font-weight:500}
 
-a{color:var(--accent);text-underline-offset:3px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media(max-width:520px){
-  .decision{padding:20px}
-  .bigidea{padding:24px 20px}
-  section{padding-block:40px}
+@media(max-width:560px){
+  section{padding-block:46px}
+  .appendix{padding:24px 20px}
 }
 </style>
 </head>
@@ -260,20 +217,16 @@ a{color:var(--accent);text-underline-offset:3px}
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="mark">바른 다음 10초</span>
+    <span class="mark">같은 병, 다른 피부</span>
     <nav aria-label="목차">
-      <a href="#evidence">근거</a>
-      <a href="#insight">인사이트</a>
-      <a href="#goal">목표</a>
-      <a href="#idea">Big Idea</a>
-      <a href="#matrix">메시지</a>
-      <a href="#creative">크리에이티브</a>
-      <a href="#beats">숏폼</a>
+      <a href="#why">왜 이 방향인가</a>
+      <a href="#concept">캠페인 콘셉트</a>
+      <a href="#board">스토리보드</a>
+      <a href="#contents">콘텐츠 콘셉트</a>
       <a href="#casting">캐스팅</a>
-      <a href="#channel">채널</a>
-      <a href="#language">표현</a>
+      <a href="#tone">톤앤매너</a>
       <a href="#measure">측정</a>
-      <a href="#onepager">크리에이터 1장</a>
+      <a href="#appendix">근거</a>
     </nav>
   </div>
 </div>
@@ -281,524 +234,360 @@ a{color:var(--accent);text-underline-offset:3px}
 <div class="wrap">
 
 <header class="cover">
-  <div class="eyebrow">
-    <span>Trendier AI · GTM Output Sample</span>
-    <span class="tag">가상 브랜드 예시</span>
-    <span>Campaign / Creative Brief</span>
+  <div class="kicker">
+    <span class="label">Campaign / Creative Brief</span>
+    <span class="chip">가상 브랜드 예시</span>
+    <span class="label">Trendier AI · GTM Output</span>
   </div>
 
-  <h1>바른 다음 10초<span class="en">The Next 10 Seconds</span></h1>
+  <h1>같은 병,<br><em>다른 피부</em></h1>
+  <div class="h1sub">Same Bottle, Different Skin</div>
 
-  <p class="lede">
-    건조함과 유분감을 동시에 신경 쓰는 미국 소비자에게, 리뷰어들이
-    <span class="tok pos">glow</span> <span class="tok pos">light_weight</span> <span class="tok pos">absorb</span>
-    라고 적은 사용 경험을 <b>효능 주장이 아니라 제형이 스며드는 10초</b>로 보여주는 캠페인.
+  <p class="standfirst">
+    피부 타입이 정반대인 두 사람이 세럼 한 병을 나눠 쓰는 아침.
+    <b>“내 피부엔 안 맞을 것 같은데”라는 속말을 브랜드가 먼저 꺼내는 캠페인.</b>
   </p>
 
-  <dl class="meta">
-    <div><dt>브랜드</dt><dd>AURELLE <span class="tag">가상</span></dd></div>
+  <dl class="overview">
+    <div><dt>브랜드</dt><dd>AURELLE <span class="chip">가상</span></dd></div>
     <div><dt>제품</dt><dd>Glow Drop Serum</dd></div>
     <div><dt>시장</dt><dd>United States</dd></div>
-    <div><dt>주력 채널</dt><dd>TikTok · Instagram Reels</dd></div>
-    <div><dt>전환 채널</dt><dd>Amazon US</dd></div>
-    <div><dt>데이터 기준</dt><dd>최근 6개월 리뷰</dd></div>
-    <div><dt>분석</dt><dd>Trendier AI</dd></div>
-    <div><dt>문서 상태</dt><dd>1차 — 검토용</dd></div>
+    <div><dt>채널</dt><dd>TikTok 중심 · Reels 확산</dd></div>
+    <div><dt>전환</dt><dd>Amazon US</dd></div>
+    <div><dt>목표</dt><dd>신규 인지 + 구매 전환</dd></div>
+    <div><dt>전략 키워드</dt><dd>2인 포맷 · 맨얼굴 · 주고받는 손</dd></div>
+    <div><dt>상태</dt><dd>1차 — 검토용</dd></div>
   </dl>
-
-  <div class="decision">
-    <h4>이 브리프로 내리는 결정</h4>
-    <ol>
-      <li><b>무엇을 말할 것인가</b>효능(안티에이징·진정)이 아니라 <em>사용감</em>을 주력 메시지로 갈지 확정한다.</li>
-      <li><b>누구를 캐스팅할 것인가</b>미감 중심 크리에이터가 아니라 자기 피부 상태를 설명할 수 있는 사람으로 갈지 확정한다.</li>
-      <li><b>무엇을 말하지 않을 것인가</b>민감·트러블·지속력 관련 표현을 캠페인 전체에서 금지할지 확정한다.</li>
-    </ol>
-  </div>
 </header>
 
-<!-- ============ 1. 근거 ============ -->
-<section id="evidence">
-  <div class="sec-head"><span class="stage">근거 01</span><h2>데이터 범위와, 이 브리프가 말할 수 없는 것</h2></div>
-  <p class="sec-sub">브리프의 신뢰는 무엇을 아는지가 아니라 <b>무엇을 모르는지 밝히는 데서</b> 나옵니다. 아래 한계를 먼저 읽고 나머지를 보십시오.</p>
+<!-- WHY -->
+<section id="why" class="why">
+  <div class="label sec-label">01 — 왜 이 방향인가</div>
+  <h2>소비자는 효능을 말하지 않았다</h2>
 
-  <div class="scroll">
-    <table>
-      <thead><tr><th>항목</th><th>확인된 것</th><th>확인되지 않은 것</th></tr></thead>
-      <tbody>
-        <tr><td><strong>채널</strong></td><td>Amazon US, Ulta US 리뷰</td><td>Sephora US — 브랜드 미매칭으로 <span class="nodata">데이터 없음</span></td></tr>
-        <tr><td><strong>리뷰 단위</strong></td><td>리뷰에서 추출된 단어와 출현 빈도</td><td>리뷰 원문 문장 — 직접 인용 불가</td></tr>
-        <tr><td><strong>표현 조합</strong></td><td>단어별 개별 빈도</td><td>한 리뷰 안에서 두 단어가 함께 쓰였는지</td></tr>
-        <tr><td><strong>SKU</strong></td><td>브랜드 전체 리뷰 합계</td><td>제품별 분해 — <span class="nodata">데이터 없음</span></td></tr>
-        <tr><td><strong>구매자 특성</strong></td><td>—</td><td>연령·성별·인종·지역·직업·피부톤 전부 <span class="nodata">데이터 없음</span></td></tr>
-        <tr><td><strong>성과 데이터</strong></td><td>—</td><td>조회·ER·CPV·ROAS·세션·판매는 외부 입력 필요 <span class="tbd">입력 필요</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note warn">
-    <b>단어 단위 추출의 한계 하나를 명시합니다.</b> 긍정 리뷰에서 <span class="tok pos">greasy</span> 70건이 확인됐지만, 이것이
-    “기름지다”인지 “기름지지 <em>않다</em>”인지는 단어만으로 구분되지 않습니다.
-    부정어가 붙은 표현일 가능성이 높아, 이 브리프는 <b>greasy를 메시지 근거로 쓰지 않고 캐스팅 근거로만</b> 씁니다.
-  </div>
-
-  <div class="note">
-    표기 규칙 — 원본 분석이 <code>90건·28건</code> 형태로 제시한 수치는 <b>Amazon·Ulta 순서</b>로 읽습니다.
-    단일 수치는 원본에 채널이 표기되지 않아 <b>채널 미표기</b>로 둡니다.
-  </div>
+  <p>
+    미국 리뷰에서 이 제품을 설명할 때 가장 많이 나온 말은 <strong>촉촉하다, 광이 난다, 스며든다, 가볍다</strong>였습니다.
+    안티에이징이나 진정 같은 효능 용어가 아니라, 전부 <strong>바를 때의 느낌</strong>입니다.
+  </p>
+  <p>
+    그리고 하나 더 있었습니다. 건조함을 말하는 사람과 유분감을 말하는 사람이
+    같은 브랜드 리뷰 안에 나란히 섞여 있었습니다.
+    뷰티 콘텐츠에서 가장 자주 나오는 반박 — “내 피부엔 안 맞을 텐데” — 이
+    이미 이 제품의 사용자 안에 들어 있다는 뜻입니다.
+  </p>
+  <p>
+    동시에 효과를 세게 약속한 쪽에는 실망 리뷰가 붙어 있었습니다.
+    그래서 이 캠페인은 약속을 줄이고, 그 반박을 숨기는 대신
+    <strong>콘텐츠의 주인공으로 만듭니다.</strong>
+  </p>
+  <p style="color:var(--ink-3);font-size:14px;margin-top:22px">
+    이 판단의 근거가 된 리뷰 표현과 건수는 <a href="#appendix">부록</a>에 정리했습니다.
+  </p>
 </section>
 
-<!-- ============ 2. 인사이트 ============ -->
-<section id="insight">
-  <div class="sec-head"><span class="stage">근거 02</span><h2>리뷰어들이 실제로 쓴 말</h2></div>
-  <p class="sec-sub">성분과 효능이 아니라, 소비자가 이 제품을 설명할 때 고른 단어입니다. 캠페인 언어는 여기서만 가져옵니다.</p>
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="label sec-label">02 — 캠페인 콘셉트</div>
 
-  <h4>긍정 리뷰 — 가장 많이 쓰인 표현</h4>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>표현</th><th class="num">Amazon</th><th class="num">Ulta</th><th>무엇을 뜻하는가</th></tr></thead>
-      <tbody>
-        <tr><td><span class="tok pos">hydrate</span></td><td class="num">124</td><td class="num">62</td><td>가장 강한 단일 신호. 보습이 이 제품의 기본 기대치</td></tr>
-        <tr><td><span class="tok pos">effective</span></td><td class="num">114</td><td class="num">37</td><td>긍정·부정 양쪽에 등장 — 효과 기대가 갈리는 지점</td></tr>
-        <tr><td><span class="tok pos">glow</span></td><td class="num">90</td><td class="num">28</td><td>결과를 묘사하는 대표어. 캠페인의 페이오프</td></tr>
-        <tr><td><span class="tok pos">sunscreen</span></td><td class="num">79</td><td class="num">—</td><td>루틴 안에서 언급됨. 단독 제품이 아니라 루틴의 일부</td></tr>
-        <tr><td><span class="tok pos">dry</span></td><td class="num">77</td><td class="num">46</td><td>해결하려는 고민. 사용자가 스스로 밝히는 피부 상태</td></tr>
-        <tr><td><span class="tok pos">texture</span></td><td class="num">76</td><td class="num">—</td><td>제형 자체를 언급 — 촬영에서 가장 중요한 단서</td></tr>
-        <tr><td><span class="tok pos">absorb</span></td><td class="num">72</td><td class="num">—</td><td>바른 직후의 경험</td></tr>
-        <tr><td><span class="tok pos">light_weight</span></td><td class="num">72</td><td class="num">—</td><td>무게감에 대한 안심</td></tr>
-        <tr><td><span class="tok pos">smooth</span></td><td class="num">72</td><td class="num">26</td><td>마무리된 피부 표면</td></tr>
-        <tr><td><span class="tok pos">makeup</span></td><td class="num">—</td><td class="num">35</td><td>Ulta에서만 확인. 메이크업 사용자 맥락</td></tr>
-        <tr><td><span class="tok pos">oily</span></td><td class="num">—</td><td class="num">31</td><td>지성 사용자도 사용 중</td></tr>
-        <tr><td><span class="tok pos">sensitive</span> / <span class="tok pos">sensitive_skin</span></td><td class="num" colspan="2">43 / 28 <span style="color:var(--ink-3)">(채널 미표기)</span></td><td>민감 피부 사용자도 있지만 안전 근거는 아님</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <div class="spread">
+    <div class="label">The Idea</div>
+    <h2>같은 병, 다른 피부</h2>
+    <div class="en">Same Bottle, Different Skin</div>
 
-  <h4>부정 리뷰 — 캠페인이 넘어야 할 벽</h4>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>표현</th><th class="num">건수</th><th>캠페인에 주는 제약</th></tr></thead>
-      <tbody>
-        <tr><td><span class="tok neg">acne</span></td><td class="num">16</td><td rowspan="2">“트러블 제로” 계열 표현 <strong>전면 금지</strong></td></tr>
-        <tr><td><span class="tok neg">breakout</span></td><td class="num">15 · 6</td></tr>
-        <tr><td><span class="tok neg">sensitive</span></td><td class="num">14</td><td rowspan="4">“무자극 / 민감 피부도 안전” <strong>전면 금지</strong>. 민감 컨셉은 안전 증언이 아니라 개인 기록으로만</td></tr>
-        <tr><td><span class="tok neg">burning</span></td><td class="num">12</td></tr>
-        <tr><td><span class="tok neg">red</span></td><td class="num">11</td></tr>
-        <tr><td><span class="tok neg">itchy</span></td><td class="num">7</td></tr>
-        <tr><td><span class="tok neg">dry</span></td><td class="num">13 · 13</td><td>“절대 건조하지 않음” 금지. 두 채널 모두에서 확인</td></tr>
-        <tr><td><span class="tok neg">waste_of_money</span></td><td class="num">11</td><td rowspan="2">“즉각적 광채 / 확실한 효과 보장” 금지. 가격 대비 실망이 실재</td></tr>
-        <tr><td><span class="tok neg">letdown</span></td><td class="num">10</td></tr>
-        <tr><td><span class="tok neg">sunscreen</span></td><td class="num">10</td><td>선스크린 궁합·밀림 방지는 <strong>단정 금지</strong></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>여기서 나오는 긴장 세 가지</h3>
-  <div class="cols">
-    <div class="panel">
-      <h4>긴장 1 — 건성과 지성이 같은 제품을 산다</h4>
-      <p style="font-size:13.5px;margin:0">
-        <span class="tok pos">dry</span> 77·46과 <span class="tok pos">oily</span> 31이 같은 브랜드 리뷰에 공존합니다.
-        한쪽만 겨냥하면 다른 쪽을 잃고, 둘 다 겨냥하면 아무 말도 못 하게 됩니다.
-        <b>해결: 효능을 약속하지 말고 두 사람의 사용 경험을 나란히 보여준다.</b>
-      </p>
-    </div>
-    <div class="panel">
-      <h4>긴장 2 — 민감 피부가 기회이자 리스크다</h4>
-      <p style="font-size:13.5px;margin:0">
-        긍정 <span class="tok pos">sensitive</span> 43과 부정 <span class="tok neg">burning</span> 12가 동시에 존재합니다.
-        민감 소구는 트래픽을 만들지만 클레임 리스크도 만듭니다.
-        <b>해결: 민감 컨셉은 만들되 ‘안전 증명’이 아니라 ‘중단까지 포함한 개인 기록’으로만.</b>
-      </p>
-    </div>
-    <div class="panel">
-      <h4>긴장 3 — effective가 양쪽에 다 있다</h4>
-      <p style="font-size:13.5px;margin:0">
-        <span class="tok pos">effective</span> 114·37이 긍정과 부정 모두에 등장하고
-        <span class="tok neg">waste_of_money</span> 11이 붙습니다. 효과를 세게 약속할수록 실망 리뷰가 커집니다.
-        <b>해결: 효과가 아니라 ‘바를 때의 느낌’으로 기대치를 낮춰 잡는다.</b>
-      </p>
+    <div class="spread-grid">
+      <div>
+        <h3>Theme</h3>
+        <p>피부 타입이 정반대인 두 사람의 아침. <b>세럼은 한 병.</b> 각자 바르고, 각자 다르게 말한다.</p>
+      </div>
+      <div>
+        <h3>Mood</h3>
+        <p>이른 아침 욕실. 창으로 들어오는 빛 한 줄. 맨얼굴, 묶지 않은 머리. <b>꾸미지 않은 상태에서 시작한다.</b></p>
+      </div>
+      <div>
+        <h3>Why it works</h3>
+        <p>시청자가 속으로 하는 반박을 브랜드가 먼저 꺼낸다. 두 사람이 나오는 포맷이라 서로 태그하게 되고,
+          <b>확산 장치가 콘셉트 안에 이미 들어 있다.</b></p>
+      </div>
+      <div>
+        <h3>Visual code</h3>
+        <p><b>병을 건네는 손.</b> 모든 영상에 병이 한 사람에게서 다른 사람에게 건너가는 컷이 들어간다.
+          이 한 컷이 캠페인의 인식표다.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. 목표 ============ -->
-<section id="goal">
-  <div class="sec-head"><span class="stage">전략 03</span><h2>목표와 측정 구조</h2></div>
-  <p class="sec-sub">조회수에서 끝나지 않고 저장 → 검색 → 유입 → 구매까지 한 줄로 봅니다. 목표 숫자는 브랜드 실적 데이터가 들어와야 확정됩니다.</p>
+<!-- STORYBOARD -->
+<section id="board">
+  <div class="label sec-label">03 — 스토리보드</div>
+  <h2>12초, 다섯 컷</h2>
+  <p class="intro">메인 콘셉트의 표준 구성입니다. 파생 콘셉트는 2번과 5번 컷만 바꿉니다.</p>
 
-  <div class="scroll">
-    <table>
-      <thead><tr><th>퍼널</th><th>보는 지표</th><th>출처</th><th>목표</th></tr></thead>
-      <tbody>
-        <tr><td><strong>인지</strong></td><td>Views, Engagement Rate</td><td>플랫폼</td><td><span class="tbd">입력 필요</span></td></tr>
-        <tr><td><strong>고려</strong></td><td>Save Rate — 이 캠페인의 핵심 중간 지표</td><td>플랫폼</td><td><span class="tbd">입력 필요</span></td></tr>
-        <tr><td><strong>관심</strong></td><td>브랜드 검색량 추이</td><td>검색 트렌드</td><td><span class="tbd">입력 필요</span></td></tr>
-        <tr><td><strong>유입</strong></td><td>링크 클릭 수</td><td>링크 도구</td><td><span class="tbd">입력 필요</span></td></tr>
-        <tr><td><strong>구매</strong></td><td>세션, 장바구니, 판매량, 카테고리 순위</td><td>Amazon 셀러 데이터</td><td><span class="tbd">입력 필요</span></td></tr>
-        <tr><td><strong>학습</strong></td><td>승리 메시지 · 승리 크리에이터 · 승리 증명 포맷</td><td>캠페인 종료 후 정리</td><td>각 1개 이상 확정</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tbl-note">Save Rate를 핵심 중간 지표로 두는 이유: 제형을 보여주는 콘텐츠는 “나중에 사야지”로 저장되는 성격이 강하고, 저장이 세션과 구매로 이어지는지가 이 캠페인 가설의 핵심이기 때문입니다.</p>
-</section>
-
-<!-- ============ 4. Big Idea ============ -->
-<section id="idea">
-  <div class="sec-head"><span class="stage">전략 04</span><h2>Big Idea</h2></div>
-
-  <div class="bigidea">
-    <div class="k">Campaign Idea</div>
-    <p>효과를 말하지 말고, 바른 다음 10초를 보여줄 것.</p>
-    <div class="why">
-      리뷰어가 가장 많이 고른 말은 결과어(<span class="mono">glow</span>)와 <b>사용 순간을 묘사하는 말</b>(<span class="mono">texture</span> 76 · <span class="mono">absorb</span> 72 · <span class="mono">light_weight</span> 72)입니다.
-      반면 효과를 세게 말할수록 <span class="mono">waste_of_money</span> · <span class="mono">letdown</span>이 따라붙습니다.
-      그래서 이 캠페인은 약속을 줄이고 증거를 늘립니다. 모든 영상은 제형이 피부에 스며드는 10초를 근접 촬영으로 담습니다.
+  <div class="board">
+    <div class="frame">
+      <div class="box">
+        <span class="no">01</span>
+        <div>
+          <div class="shot">The Handoff</div>
+          <div class="time">0 – 2s</div>
+        </div>
+      </div>
+      <p class="dir">손에서 손으로 병이 건너간다. 얼굴 없이 손만. 대사 없음.</p>
     </div>
-  </div>
 
-  <div class="note">
-    <b>이 아이디어가 실행 규칙이 되는 이유:</b> 크리에이터에게 “예쁘게 찍어주세요”가 아니라
-    “<b>바른 직후 10초, 얼굴에서 15cm 이내, 자르지 말고 한 컷</b>”이라는 검수 가능한 지시로 번역되기 때문입니다.
-  </div>
-</section>
+    <div class="frame">
+      <div class="box">
+        <span class="no">02</span>
+        <div>
+          <div class="shot">The Declaration</div>
+          <div class="time">2 – 4s</div>
+        </div>
+      </div>
+      <p class="dir">각자 자기 피부를 한마디로 말한다. “I’m dry.” / “I’m oily.” 그 이상 설명하지 않는다.</p>
+    </div>
 
-<!-- ============ 5. 메시지 매트릭스 ============ -->
-<section id="matrix">
-  <div class="sec-head"><span class="stage">전략 05</span><h2>메시지 가설 매트릭스</h2></div>
-  <p class="sec-sub">메시지를 하나로 정하지 않고 네 개를 동시에 시험합니다. 한 번의 캠페인으로 <b>무엇이 먹히는지</b>를 알아내는 것이 이번 라운드의 목적입니다.</p>
+    <div class="frame">
+      <div class="box">
+        <span class="no">03</span>
+        <div>
+          <div class="shot">The Drop</div>
+          <div class="time">4 – 7s</div>
+        </div>
+      </div>
+      <p class="dir">제형이 손등에 떨어지고 퍼지는 근접 컷. 필터 없이, 자르지 않고 한 번에.</p>
+    </div>
 
-  <div class="scroll">
-    <table style="min-width:840px">
-      <thead><tr><th>메시지</th><th>타깃</th><th>보여줄 증거</th><th>리뷰 근거</th><th>성공 판정</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>M1 · 스며드는 가벼움</strong><br><span style="color:var(--ink-2)">무게감 없이 사라진다</span></td>
-          <td>제형 무게에 민감한 사용자</td>
-          <td>제형 흐름 → 도포 → 흡수까지 끊지 않은 한 컷</td>
-          <td><span class="tok pos">texture</span> 76 · <span class="tok pos">absorb</span> 72 · <span class="tok pos">light_weight</span> 72</td>
-          <td>Save Rate 최상위</td>
-        </tr>
-        <tr>
-          <td><strong>M2 · 건성도 지성도</strong><br><span style="color:var(--ink-2)">두 피부가 각자 쓴다</span></td>
-          <td>자기 피부 타입을 특정하는 사용자</td>
-          <td>두 사람, 같은 조명, 각자의 소감</td>
-          <td><span class="tok pos">dry</span> 77·46 · <span class="tok pos">oily</span> 31 · <span class="tok pos">hydrate</span> 124·62</td>
-          <td>댓글 내 피부 타입 질문 감소</td>
-        </tr>
-        <tr>
-          <td><strong>M3 · 메이크업 위의 광</strong><br><span style="color:var(--ink-2)">화장한 피부의 결</span></td>
-          <td>데일리 메이크업 사용자</td>
-          <td>메이크업한 피부 표면을 자연광·실내광에서</td>
-          <td><span class="tok pos">makeup</span> 35 · <span class="tok pos">smooth</span> 26 · <span class="tok pos">glow</span> 28 <em>(Ulta)</em></td>
-          <td>Ulta 채널 리뷰 증가</td>
-        </tr>
-        <tr>
-          <td><strong>M4 · 선스크린 루틴</strong><br><span style="color:var(--ink-2)">이미 쓰는 루틴 안에서</span></td>
-          <td>선케어 루틴 보유자</td>
-          <td>두 제품이 함께 등장하는 일상 장면</td>
-          <td><span class="tok pos">sunscreen</span> 79 · <span class="tok pos">hydrate</span> 124 · <span class="tok pos">glow</span> 90</td>
-          <td>루틴 검색 유입 증가</td>
-        </tr>
-        <tr style="background:var(--caution-soft)">
-          <td><strong>M5 · 민감 기록</strong><br><span style="color:var(--caution)">조건부 · 법무 확인 후</span></td>
-          <td>민감함을 자각한 사용자</td>
-          <td>도포 후 소감 + 불편 시 중단 장면 + 개인차 고지</td>
-          <td>긍정 <span class="tok pos">sensitive</span> 43 / 부정 <span class="tok neg">burning</span> 12 <span class="tok neg">red</span> 11</td>
-          <td>클레임 0건이면 성공</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="frame">
+      <div class="box">
+        <span class="no">04</span>
+        <div>
+          <div class="shot">The Minute</div>
+          <div class="time">7 – 10s</div>
+        </div>
+      </div>
+      <p class="dir">각자 바르고, 스며드는 동안 말이 없다. 이 침묵이 제품을 설명한다.</p>
+    </div>
 
-  <div class="note warn">
-    <b>M5는 기본 실행에서 제외하고, 법무 검토를 통과한 경우에만 집행합니다.</b>
-    민감 관련 부정 표현이 세 종류(<span class="tok neg">burning</span> <span class="tok neg">red</span> <span class="tok neg">itchy</span>) 확인됐기 때문입니다.
-    우선순위는 <b>M1 → M2 → M3 → M4</b>입니다.
+    <div class="frame">
+      <div class="box">
+        <span class="no">05</span>
+        <div>
+          <div class="shot">Two Faces</div>
+          <div class="time">10 – 12s</div>
+        </div>
+      </div>
+      <p class="dir">같은 조명, 두 얼굴. <b>같아 보이게 만들지 않는다.</b> 다른 채로 끝낸다.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 6. 크리에이티브 ============ -->
-<section id="creative">
-  <div class="sec-head"><span class="stage">실행 06</span><h2>크리에이티브 테리토리</h2></div>
-  <p class="sec-sub">브랜드 일관성은 <b>필수 장면</b>으로 지키고, 크리에이터 개성은 <b>자유 변주</b>로 살립니다. 이 두 칸을 나눠 주는 것이 브리프의 핵심 역할입니다.</p>
+<!-- CONTENT CONCEPTS -->
+<section id="contents">
+  <div class="label sec-label">04 — 콘텐츠 콘셉트</div>
+  <h2>세 가지 변주</h2>
+  <p class="intro">같은 아이디어를 크리에이터 상황에 맞게 셋으로 나눴습니다. A가 기본이고, 2인 촬영이 어려우면 B 또는 C로 갑니다.</p>
 
-  <div class="cols">
-    <div class="panel ok">
-      <h4>모든 영상에 반드시 들어가는 것</h4>
-      <ul>
-        <li>바른 직후 10초 근접 컷<small>얼굴에서 15cm 이내, 컷 분할 없이 한 번에</small></li>
-        <li>보정하지 않은 제형<small>필터·뷰티 모드 끄고 촬영</small></li>
-        <li>크리에이터 본인의 피부 상태 언급<small>“나는 건조한 편이다” 수준이면 충분</small></li>
-        <li>사용 경험으로 말하는 소감<small>“나는 이렇게 느꼈다” 구조</small></li>
-        <li>개인차 자막<small>피부 반응은 사람마다 다를 수 있음</small></li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h4>크리에이터가 바꿔도 되는 것</h4>
-      <ul>
-        <li>영상 톤 — 정보형 / 일상형 / 유머</li>
-        <li>촬영 장소와 시간대</li>
-        <li>루틴에 함께 등장하는 다른 제품</li>
-        <li>오프닝 방식과 자막 스타일</li>
-        <li>음악, 편집 속도, 밈 포맷</li>
-      </ul>
-    </div>
-    <div class="panel no">
-      <h4>절대 하지 않는 것</h4>
-      <ul>
-        <li>비포·애프터 대비 연출<small>효과 보장으로 읽힘</small></li>
-        <li>실험실·테스트 형식의 연출<small>안전성 주장으로 읽힘</small></li>
-        <li>여러 사람의 결과를 같게 맞추기</li>
-        <li>사용 순서·궁합을 사용법처럼 단정하기</li>
-        <li>리뷰를 문장으로 인용하기<small>원문이 없어 사실 확인 불가</small></li>
-      </ul>
-    </div>
-  </div>
+  <div class="concepts">
 
-  <div class="note flag">
-    <b>훅 자막 표기 규칙.</b> <span class="mono">GLOW. LIGHT WEIGHT. SMOOTH.</span> 같은 훅은
-    리뷰에서 추출된 <b>단어를 나열한 화면 자막</b>입니다. 따옴표를 붙여 리뷰 인용처럼 제시하지 않습니다.
-    원문 문장이 제공되지 않아 인용의 진위를 보증할 수 없기 때문입니다.
+    <div class="card">
+      <span class="role">A · 메인</span>
+      <h3>같은 병, 다른 피부</h3>
+      <p class="oneline">피부 타입이 정반대인 두 사람이 한 병을 나눠 쓰는 아침</p>
+      <div class="block">
+        <span class="label">메시지 포인트</span>
+        <div class="tags"><span>#SameBottleDifferentSkin</span><span>#MorningGlow</span><span>#LightweightLayer</span></div>
+      </div>
+      <div class="block">
+        <span class="label">연출 가이드</span>
+        <ol>
+          <li>병을 건네는 손 클로즈업으로 오프닝</li>
+          <li>각자 자기 피부 타입을 한마디로 선언</li>
+          <li>제형이 떨어지고 스며드는 근접 컷</li>
+          <li>같은 조명에서 두 얼굴. 결과를 맞추지 않음</li>
+          <li>CTA — 나와 피부 타입이 반대인 친구 태그</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="role">B · 1인 루틴</span>
+      <h3>지나가는 자리</h3>
+      <p class="oneline">선스크린과 메이크업 사이, 이 병이 지나가는 자리</p>
+      <div class="block">
+        <span class="label">메시지 포인트</span>
+        <div class="tags"><span>#BeforeSunscreen</span><span>#UnderMakeup</span><span>#MorningGlow</span></div>
+      </div>
+      <div class="block">
+        <span class="label">연출 가이드</span>
+        <ol>
+          <li>아침 루틴 전체를 빠른 속도로 보여줌</li>
+          <li>이 제품 차례에서만 속도를 늦춤</li>
+          <li>순서를 사용법처럼 말하지 않고 “내 루틴”으로 말함</li>
+          <li>메이크업을 마친 피부 표면 근접으로 마무리</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="role">C · 미니멀</span>
+      <h3>맨얼굴 1분</h3>
+      <p class="oneline">아무것도 안 바른 얼굴에서 시작해, 딱 한 병만</p>
+      <div class="block">
+        <span class="label">메시지 포인트</span>
+        <div class="tags"><span>#BareMinute</span><span>#OneStep</span><span>#MorningGlow</span></div>
+      </div>
+      <div class="block">
+        <span class="label">연출 가이드</span>
+        <ol>
+          <li>맨얼굴 클로즈업에서 시작</li>
+          <li>한 방울, 한 번의 도포</li>
+          <li>흡수되는 1분을 말 없이 담음</li>
+          <li>측면광에서 피부 표면을 보여주며 끝냄</li>
+        </ol>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ============ 7. 숏폼 ============ -->
-<section id="beats">
-  <div class="sec-head"><span class="stage">실행 07</span><h2>숏폼 12초 구성안</h2></div>
-  <p class="sec-sub">M1 기준 표준 구성입니다. M2–M4는 훅과 8–12초 구간만 교체합니다.</p>
-
-  <div class="beats">
-    <div class="beat">
-      <span class="t">0–3초 · 훅</span>
-      <span class="h">단어 자막으로 진입</span>
-      <p><span class="mono">GLOW. LIGHT WEIGHT. SMOOTH.</span><br>제품명을 먼저 말하지 않습니다. 근거: <span class="tok pos">glow</span> 90·28 · <span class="tok pos">light_weight</span> 72 · <span class="tok pos">smooth</span> 72·26</p>
-    </div>
-    <div class="beat">
-      <span class="t">3–8초 · 증거</span>
-      <span class="h">제형 → 도포 → 표면</span>
-      <p>끊지 않은 한 컷. 이 구간이 캠페인의 전부입니다. 근거: <span class="tok pos">texture</span> 76 · <span class="tok pos">absorb</span> 72</p>
-    </div>
-    <div class="beat">
-      <span class="t">8–12초 · 의심 대응</span>
-      <span class="h">반론을 먼저 꺼낸다</span>
-      <p>“무겁거나 기름지지 않나요?” → 도포 직후 피부를 옆에서 비추며 <em>일부 리뷰어는 light_weight, absorb라고 표현했다</em>고 자막.</p>
-    </div>
-    <div class="beat">
-      <span class="t">엔딩</span>
-      <span class="h">무문구 엔딩</span>
-      <p>재구매·추천 멘트는 만들지 않습니다. 근거 <span class="nodata">데이터 없음</span>. 제형과 피부 표면으로 끝냅니다.</p>
-    </div>
-  </div>
-
-  <h4>메시지별 훅 자막</h4>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>메시지</th><th>0–3초 자막</th><th>8–12초에서 받아칠 의심</th></tr></thead>
-      <tbody>
-        <tr><td><strong>M1</strong></td><td class="mono">GLOW. LIGHT WEIGHT. SMOOTH.</td><td>무겁거나 기름지지 않나요?</td></tr>
-        <tr><td><strong>M2</strong></td><td class="mono">DRY? OILY? HYDRATE. GLOW.</td><td>건조하게 느껴지지 않나요?</td></tr>
-        <tr><td><strong>M3</strong></td><td class="mono">MAKEUP. SMOOTH. GLOW.</td><td>메이크업과 같이 써도 되나요?</td></tr>
-        <tr><td><strong>M4</strong></td><td class="mono">SUNSCREEN. HYDRATE. GLOW.</td><td>선스크린과 같이 써도 되나요?</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="tbl-note">의심을 마지막에 두는 이유: 8초 이후 이탈한 시청자는 어차피 구매하지 않습니다. 남아 있는 시청자는 이미 고려 중이고, 그들이 가진 질문을 브랜드가 먼저 꺼내면 댓글 방어 비용이 줄어듭니다.</p>
-</section>
-
-<!-- ============ 8. 캐스팅 ============ -->
+<!-- CASTING -->
 <section id="casting">
-  <div class="sec-head"><span class="stage">실행 08</span><h2>크리에이터 캐스팅</h2></div>
-  <p class="sec-sub">미감 중심 크리에이터가 아니라 <b>자기 피부를 설명할 수 있는 사람</b>을 고릅니다. 이 캠페인은 설명이 증거이기 때문입니다.</p>
+  <div class="label sec-label">05 — 캐스팅</div>
+  <h2>예쁘게 찍는 사람보다, 자기 피부를 말할 수 있는 사람</h2>
+  <p class="intro">이 캠페인은 설명이 곧 증거입니다. 미감 중심 크리에이터보다 자기 피부 상태를 한 문장으로 말할 수 있는 사람이 먼저입니다.</p>
 
-  <div class="scroll">
-    <table>
-      <thead><tr><th>캐스팅 유형</th><th>리뷰 근거</th><th>배정 메시지</th><th>주의</th></tr></thead>
-      <tbody>
-        <tr><td><strong>건조함을 실제로 느끼는 사용자</strong></td><td><span class="tok pos">dry</span> 77·46</td><td>M1 · M2</td><td>본인 상태를 직접 말할 수 있어야 함</td></tr>
-        <tr><td><strong>유분감을 신경 쓰는 사용자</strong></td><td><span class="tok pos">oily</span> 31 · <span class="tok pos">greasy</span> 70</td><td>M2</td><td>피지 조절 효능은 주장 금지</td></tr>
-        <tr><td><strong>데일리 메이크업 사용자</strong></td><td><span class="tok pos">makeup</span> 35 <em>(Ulta)</em></td><td>M3</td><td>지속력·밀림 방지 언급 금지</td></tr>
-        <tr><td><strong>선케어 루틴 보유자</strong></td><td><span class="tok pos">sunscreen</span> 79 / <span class="tok neg">10</span></td><td>M4</td><td>사용 순서 단정 금지</td></tr>
-        <tr><td><strong>민감함을 자각한 사용자</strong></td><td><span class="tok pos">sensitive</span> 43 · <span class="tok pos">sensitive_skin</span> 28</td><td>M5 <span class="tag">조건부</span></td><td>안전 증언자가 아니라 기록자로 캐스팅</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="note warn">
-    <b>캐스팅에 쓰지 않는 기준:</b> 연령, 성별, 인종, 지역, 직업, 피부톤.
-    리뷰 데이터에 없는 항목이므로 “실제 구매자는 이렇다”는 근거로 사용할 수 없습니다.
-    캐스팅 다양성은 브랜드 판단으로 별도 결정하되, <b>데이터 근거로 포장하지 않습니다.</b>
-  </div>
-</section>
-
-<!-- ============ 9. 채널 ============ -->
-<section id="channel">
-  <div class="sec-head"><span class="stage">실행 09</span><h2>채널별 메시징</h2></div>
-  <p class="sec-sub">같은 Big Idea를 채널이 요구하는 형태로 바꿉니다. 메시지는 하나, 표현은 넷.</p>
-
-  <div class="scroll">
-    <table>
-      <thead><tr><th>채널</th><th>역할</th><th>이 채널에서의 표현</th><th>보는 지표</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>TikTok</strong></td><td>발견</td>
-          <td>12초 구성안 그대로. 단어 자막 훅으로 진입, 무문구 엔딩</td>
-          <td>Save Rate · Views</td>
-        </tr>
-        <tr>
-          <td><strong>Instagram Reels</strong></td><td>재확인</td>
-          <td>TikTok 소재 재활용. 캡션에서 개인차 고지를 더 명확히</td>
-          <td>저장 · 프로필 방문</td>
-        </tr>
-        <tr>
-          <td><strong>Amazon 상세·A+</strong></td><td>전환</td>
-          <td>제형 근접 이미지 우선. 텍스트는 <span class="tok pos">hydrate</span> <span class="tok pos">light_weight</span> <span class="tok pos">absorb</span> 중심</td>
-          <td>세션 · 장바구니 · 순위</td>
-        </tr>
-        <tr>
-          <td><strong>Ulta</strong></td><td>확장</td>
-          <td>메이크업 맥락(M3)을 전면에. Ulta 리뷰에서만 <span class="tok pos">makeup</span> 35가 확인됨</td>
-          <td>리뷰 수 증가</td>
-        </tr>
-        <tr>
-          <td><strong>Sephora</strong></td><td><span class="nodata">판단 보류</span></td>
-          <td>브랜드 리뷰가 매칭되지 않아 이 브리프로는 근거를 만들 수 없음</td>
-          <td>—</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="cast">
+    <div class="cast-row">
+      <h3>건성 × 지성 페어</h3>
+      <p>콘셉트 A의 핵심. 실제 친구·룸메이트·자매처럼 <b>관계가 보이는</b> 조합이어야 연출이 아니라 상황으로 읽힙니다.</p>
+    </div>
+    <div class="cast-row">
+      <h3>자기 피부를 한 문장으로 말하는 사람</h3>
+      <p>“I’m dry.” 이 한마디를 어색하지 않게 하는 사람. 캐스팅 1순위 기준입니다.</p>
+    </div>
+    <div class="cast-row">
+      <h3>데일리 메이크업 사용자</h3>
+      <p>콘셉트 B용. 실제로 매일 화장하는 사람이어야 루틴이 만들어진 것처럼 보이지 않습니다.</p>
+    </div>
+    <div class="cast-row">
+      <h3>선케어 루틴 보유자</h3>
+      <p>콘셉트 B용. 선스크린을 이미 쓰는 사람. 단, 사용 순서를 규칙처럼 말하게 하지 않습니다.</p>
+    </div>
+    <div class="cast-row">
+      <h3>쓰지 않는 기준</h3>
+      <p>연령·성별·인종·지역·피부톤. 리뷰 데이터에 없는 항목이라 “실제 구매자는 이렇다”는 근거로 쓸 수 없습니다.
+        캐스팅 다양성은 브랜드 판단으로 정하되, <b>데이터 근거로 포장하지 않습니다.</b></p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 10. 표현 ============ -->
-<section id="language">
-  <div class="sec-head"><span class="stage">실행 10</span><h2>표현 가이드와 댓글 대응</h2></div>
+<!-- TONE -->
+<section id="tone">
+  <div class="label sec-label">06 — 톤앤매너</div>
+  <h2>말하는 방식</h2>
 
-  <div class="cols">
-    <div class="panel ok">
-      <h4>그대로 쓰는 말</h4>
+  <div class="dd">
+    <div class="dd-col do">
+      <h3>이렇게 말한다</h3>
       <ul>
-        <li><span class="tok pos">hydrate</span><small>긍정 124 · 62</small></li>
-        <li><span class="tok pos">glow</span><small>긍정 90 · 28</small></li>
-        <li><span class="tok pos">absorb</span><small>긍정 72</small></li>
-        <li><span class="tok pos">light_weight</span><small>긍정 72</small></li>
-        <li><span class="tok pos">smooth</span><small>긍정 72 · 26</small></li>
-        <li><span class="tok pos">texture</span><small>긍정 76</small></li>
+        <li>소비자가 실제로 쓴 말로 — 촉촉하다, 광이 난다, 스며든다, 가볍다</li>
+        <li>“효과가 있다”가 아니라 <b>“나는 이렇게 느꼈다”</b></li>
+        <li>사람마다 다르다는 걸 감추지 않는다</li>
+        <li>시청자가 가질 의심을 먼저 꺼낸다</li>
+        <li>침묵을 쓴다. 설명이 적을수록 제형이 보인다</li>
       </ul>
     </div>
-    <div class="panel no">
-      <h4>쓰지 않는 말</h4>
+    <div class="dd-col dont">
+      <h3>이렇게 말하지 않는다</h3>
       <ul>
-        <li>무자극 · 민감 피부도 안전<small>burning 12 · red 11 · itchy 7</small></li>
-        <li>트러블 제로<small>acne 16 · breakout 15·6</small></li>
-        <li>절대 건조하지 않음<small>부정 dry 13 · 13</small></li>
-        <li>절대 끈적이지 않음 · 모든 지성 피부에 적합<small>동일 결과 근거 없음</small></li>
-        <li>즉각적 광채 · 확실한 효과 보장<small>waste_of_money 11 · letdown 10</small></li>
-        <li>또 살 거예요 · 꼭 추천해요<small>재구매 의도 데이터 없음</small></li>
+        <li>무자극 · 민감 피부도 안전</li>
+        <li>트러블 제로</li>
+        <li>절대 건조하지 않음 · 절대 끈적이지 않음</li>
+        <li>모든 피부 타입에 적합</li>
+        <li>즉각적인 광채 · 확실한 효과 보장</li>
+        <li>“또 살 거예요” 같은 재구매 멘트</li>
+        <li>비포·애프터 대비 연출, 실험실 형식 연출</li>
       </ul>
     </div>
   </div>
 
-  <h3>댓글 대응 키트</h3>
-  <p>원칙 하나: <b>긍정 리뷰만으로 반박하지 않습니다.</b> 상반된 리뷰가 존재한다는 사실을 함께 밝히는 편이 장기적으로 신뢰를 지킵니다.</p>
-  <div class="scroll">
-    <table style="min-width:720px">
-      <thead><tr><th>반복되는 질문</th><th>근거가 되는 부정 리뷰</th><th>답변 초안</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>건조하게 느껴지지 않나요?</td>
-          <td><span class="tok neg">dry</span> 13 · 13</td>
-          <td>일부 리뷰에는 <span class="mono">dry</span>가 있었고, 다른 리뷰어들은 사용감을 <span class="mono">hydrate</span>라고 표현했습니다. 피부 상태에 따라 느낌은 다를 수 있습니다.</td>
-        </tr>
-        <tr>
-          <td>민감 피부도 쓸 수 있나요?</td>
-          <td><span class="tok neg">burning</span> 12 · <span class="tok neg">red</span> 11 · <span class="tok neg">itchy</span> 7</td>
-          <td>민감함을 언급한 긍정 리뷰도 있지만 불편함을 말한 리뷰도 있어, 무자극이라고 보장하지는 않습니다.</td>
-        </tr>
-        <tr>
-          <td>트러블이 생기지는 않나요?</td>
-          <td><span class="tok neg">acne</span> 16 · <span class="tok neg">breakout</span> 15·6</td>
-          <td>일부 리뷰어는 <span class="mono">effective</span>라고 표현했고, 일부는 <span class="mono">breakout</span>이나 <span class="mono">acne</span>를 언급했습니다. 피부 반응에는 개인차가 있습니다.</td>
-        </tr>
-        <tr>
-          <td>무겁거나 기름지지 않나요?</td>
-          <td>—</td>
-          <td>일부 리뷰어는 사용감을 <span class="mono">light_weight</span>, <span class="mono">absorb</span>라고 표현했습니다. 모든 피부에서 같은 결과를 보장하지는 않습니다.</td>
-        </tr>
-        <tr>
-          <td>메이크업·선스크린과 같이 써도 되나요?</td>
-          <td><span class="tok neg">sunscreen</span> 10</td>
-          <td>두 사용 상황 모두 리뷰에 등장하지만, 정확한 순서나 밀림 방지 효과까지 확인된 것은 아닙니다.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p style="margin-top:26px;color:var(--ink-3);font-size:14px">
+    금지 표현은 취향이 아니라 리스크 관리입니다. 각 항목이 왜 금지인지는 <a href="#appendix">부록</a>의 부정 리뷰 표현에 대응합니다.
+  </p>
 </section>
 
-<!-- ============ 11. 측정 ============ -->
+<!-- MEASURE -->
 <section id="measure">
-  <div class="sec-head"><span class="stage">측정 11</span><h2>끝난 뒤에 내릴 결정</h2></div>
-  <p class="sec-sub">캠페인의 산출물은 영상이 아니라 <b>다음 캠페인이 쓸 수 있는 결론</b>입니다.</p>
+  <div class="label sec-label">07 — 측정</div>
+  <h2>이 캠페인이 남겨야 할 것</h2>
+  <p class="intro">영상 50개가 아니라, 다음 캠페인이 쓸 수 있는 결론 하나입니다.</p>
 
-  <div class="scroll">
-    <table>
-      <thead><tr><th>판정</th><th>조건</th><th>다음 액션</th></tr></thead>
-      <tbody>
-        <tr><td><strong>확대</strong></td><td>Save Rate 상위 메시지 + Amazon 세션 동반 상승</td><td>해당 메시지로 유료 증폭, 같은 유형 크리에이터 추가 계약</td></tr>
-        <tr><td><strong>중단</strong></td><td>조회는 높지만 저장·세션이 움직이지 않음</td><td>해당 메시지 폐기. 훅만 살려 다른 증거와 재조합</td></tr>
-        <tr><td><strong>재시험</strong></td><td>메시지 간 차이가 통계적으로 불분명</td><td>변수를 하나만 남기고(훅 또는 증거) 2차 라운드</td></tr>
-        <tr><td><strong>자산화</strong></td><td>라운드 종료</td><td>승리 메시지 · 크리에이터 · 증명 포맷을 브랜드 자산 DB에 기록</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>이 브리프를 다음 단계로 올리려면 필요한 것</h3>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>필요한 데이터</th><th>없으면 생기는 문제</th><th>확보처</th></tr></thead>
-      <tbody>
-        <tr><td>SKU별 리뷰 분해</td><td>어떤 제품에 어떤 컨셉을 붙일지 정할 수 없음</td><td>Trendier — SKU 단위 재분석</td></tr>
-        <tr><td>리뷰 원문 문장</td><td>실제 소비자 발화를 훅으로 쓸 수 없음</td><td>Trendier 또는 브랜드 리뷰 원본</td></tr>
-        <tr><td>크리에이터 성과</td><td>KPI 목표치를 세울 수 없음</td><td>브랜드 과거 캠페인 데이터</td></tr>
-        <tr><td>Amazon 실적</td><td>콘텐츠가 매출에 기여했는지 판정 불가</td><td>브랜드 셀러 센트럴</td></tr>
-        <tr><td>Sephora 매칭</td><td>3대 채널 중 하나가 통째로 비어 있음</td><td>브랜드 확인 필요</td></tr>
-      </tbody>
-    </table>
+  <div class="kpi">
+    <div class="kpi-row"><span class="k">1차 지표</span><span class="v"><b>저장률.</b> 제형을 보여주는 콘텐츠는 “나중에 사야지”로 저장됩니다. 조회수보다 먼저 봅니다.</span></div>
+    <div class="kpi-row"><span class="k">2차 지표</span><span class="v">브랜드 검색량 · 링크 클릭 · Amazon 세션과 장바구니</span></div>
+    <div class="kpi-row"><span class="k">판정</span><span class="v">A·B·C 중 저장률과 세션이 함께 오른 콘셉트 <b>하나를 승자로 확정</b>합니다.</span></div>
+    <div class="kpi-row"><span class="k">다음 액션</span><span class="v">승리 콘셉트는 유료 증폭과 상세페이지로 확장. 나머지 둘은 훅만 남기고 폐기합니다.</span></div>
+    <div class="kpi-row"><span class="k">목표 수치</span><span class="v">브랜드 과거 캠페인 실적이 들어오면 확정합니다. 현재 근거로는 세울 수 없습니다.</span></div>
   </div>
 </section>
 
-<!-- ============ 부록 ============ -->
-<div class="appendix" id="onepager">
-  <div class="sec-head"><span class="stage">부록</span><h2>크리에이터 전달용 1장</h2></div>
-  <p class="sec-sub">위 내용 중 크리에이터에게 실제로 나가는 부분만 잘라낸 것입니다. 이 표만 전달하면 촬영이 가능합니다.</p>
+<!-- APPENDIX -->
+<div class="appendix" id="appendix">
+  <div class="label sec-label">부록</div>
+  <h2>이 브리프의 근거</h2>
+  <p>
+    본문은 방향만 담았습니다. 아래는 그 방향을 고른 이유입니다.
+    최근 6개월 미국 리뷰를 Trendier AI로 분석했고, <b>Amazon US와 Ulta US</b>에서만 브랜드가 확인됐습니다.
+    Sephora US는 매칭되지 않아 제외했습니다.
+  </p>
 
+  <h3 style="font-size:16px;margin-top:24px">소비자가 고른 말</h3>
   <div class="scroll">
     <table>
+      <thead><tr><th>표현</th><th class="n">Amazon</th><th class="n">Ulta</th><th>브리프에 반영된 곳</th></tr></thead>
       <tbody>
-        <tr><th style="width:150px">캠페인 한 줄</th><td>바른 다음 10초를 보여준다. 효과를 말하지 않는다.</td></tr>
-        <tr><th>메인 메시지</th><td>가볍게 스며드는 사용감. 제품 효능이 아니라 <strong>본인의 경험</strong>으로 말한다.</td></tr>
-        <tr><th>핵심 타깃</th><td>건조함 또는 유분감을 신경 쓰며, 메이크업·선스크린을 일상적으로 쓰는 사람</td></tr>
-        <tr><th>영상 길이</th><td>12초 내외 세로 영상</td></tr>
-        <tr><th>0–3초</th><td>단어 자막으로 시작 — <span class="mono">GLOW. LIGHT WEIGHT. SMOOTH.</span> 제품명은 나중에</td></tr>
-        <tr><th>3–8초</th><td><strong>가장 중요한 구간.</strong> 제형 → 도포 → 피부 표면을 <strong>끊지 않은 한 컷</strong>으로. 얼굴에서 15cm 이내</td></tr>
-        <tr><th>8–12초</th><td>시청자가 가질 의심을 직접 꺼내고 답한다 — “무겁거나 기름지지 않나요?”</td></tr>
-        <tr><th>엔딩</th><td>멘트 없이 제형과 피부로 마무리. 재구매·추천 멘트 <strong>만들지 않음</strong></td></tr>
-        <tr><th>필수 요소</th><td>보정 없는 제형 · 본인 피부 상태 언급 · 실제 사용 소감 · 개인차 자막</td></tr>
-        <tr><th>자유 요소</th><td>톤, 장소, 음악, 편집 속도, 함께 쓰는 다른 제품, 자막 스타일</td></tr>
-        <tr><th>쓸 말</th><td><span class="mono">hydrate · glow · absorb · light_weight · smooth · texture</span></td></tr>
-        <tr><th>말하는 방식</th><td>“반드시 ○○한다”가 아니라 <strong>“나는 이렇게 느꼈다”</strong></td></tr>
-        <tr><th>금지</th><td>무자극 · 트러블 제로 · 절대 끈적이지 않음 · 모든 피부에 적합 · 즉각적 효과 보장 · 비포애프터 대비 연출 · 실험 형식 연출</td></tr>
-        <tr><th>댓글 대응</th><td>긍정 리뷰만으로 반박하지 않는다. 상반된 후기와 개인차를 함께 밝힌다.</td></tr>
-        <tr><th>SKU 배정</th><td><span class="nodata">데이터 없음</span> — 제품별 근거가 확보되면 재배정</td></tr>
+        <tr><td class="word">hydrate</td><td class="n">124</td><td class="n">62</td><td>“촉촉하다” — 톤앤매너 허용 표현</td></tr>
+        <tr><td class="word">glow</td><td class="n">90</td><td class="n">28</td><td>캠페인 페이오프, 해시태그</td></tr>
+        <tr><td class="word">texture</td><td class="n">76</td><td class="n">—</td><td>스토리보드 03 · 04</td></tr>
+        <tr><td class="word">absorb</td><td class="n">72</td><td class="n">—</td><td>스토리보드 04 “The Minute”</td></tr>
+        <tr><td class="word">light_weight</td><td class="n">72</td><td class="n">—</td><td>해시태그 #LightweightLayer</td></tr>
+        <tr><td class="word">smooth</td><td class="n">72</td><td class="n">26</td><td>스토리보드 05</td></tr>
+        <tr><td class="word">dry</td><td class="n">77</td><td class="n">46</td><td rowspan="2">콘셉트 A의 건성 × 지성 페어</td></tr>
+        <tr><td class="word">oily</td><td class="n">—</td><td class="n">31</td></tr>
+        <tr><td class="word">sunscreen</td><td class="n">79</td><td class="n">—</td><td rowspan="2">콘셉트 B</td></tr>
+        <tr><td class="word">makeup</td><td class="n">—</td><td class="n">35</td></tr>
       </tbody>
     </table>
   </div>
+
+  <h3 style="font-size:16px">금지 표현의 근거</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>부정 리뷰 표현</th><th class="n">건수</th><th>그래서 금지한 말</th></tr></thead>
+      <tbody>
+        <tr><td class="word">burning · red · itchy</td><td class="n">12 · 11 · 7</td><td>무자극, 민감 피부도 안전</td></tr>
+        <tr><td class="word">acne · breakout</td><td class="n">16 · 15</td><td>트러블 제로</td></tr>
+        <tr><td class="word">dry</td><td class="n">13 · 13</td><td>절대 건조하지 않음</td></tr>
+        <tr><td class="word">waste_of_money · letdown</td><td class="n">11 · 10</td><td>즉각적 광채, 확실한 효과 보장</td></tr>
+        <tr><td class="word">sunscreen</td><td class="n">10</td><td>선스크린 궁합·밀림 방지 단정</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-size:16px">이 브리프가 아직 못 정한 것</h3>
+  <ul>
+    <li><b>SKU 배정</b> — 리뷰가 브랜드 전체 기준이라 제품별로 콘셉트를 나눌 근거가 없습니다.</li>
+    <li><b>리뷰 인용</b> — 원문 문장이 아니라 단어 단위 추출이라, 리뷰를 따옴표로 인용할 수 없습니다. 자막도 단어 나열까지만 씁니다.</li>
+    <li><b>민감 피부 콘셉트</b> — 긍정과 부정이 모두 확인돼 별도 콘셉트로 만들지 않았습니다. 진행하려면 법무 검토가 먼저입니다.</li>
+    <li><b>“기름지지 않다”</b> — 긍정 리뷰의 <span class="word">greasy</span> 70건은 부정어가 붙은 표현일 가능성이 있어 메시지 근거로 쓰지 않았습니다.</li>
+    <li><b>목표 수치</b> — 조회·저장·세션·매출은 브랜드 데이터가 있어야 세울 수 있습니다.</li>
+  </ul>
 </div>
 
 <footer>
-  <b>문서 성격</b> — Trendier AI 분석을 실제 현업 산출물 형태로 재구성한 GTM 예시입니다.
-  브랜드명 AURELLE과 제품명은 가상이며, 리뷰 표현과 건수는 Trendier AI 분석 결과를 그대로 사용했습니다.<br>
-  <b>수치 표기</b> — <span class="mono">124 · 62</span> 형태는 Amazon US · Ulta US 순서입니다. 단일 수치는 원본에 채널이 표기되지 않은 항목입니다.<br>
-  <b>한계</b> — 리뷰 원문 문장, SKU별 분해, 구매자 인구 특성, 콘텐츠·광고·커머스 성과는 이 문서의 근거에 포함되어 있지 않습니다.
+  <b>문서 성격</b> — Trendier AI 리뷰 분석을 실제 캠페인 브리프 형태로 만든 GTM 예시입니다.
+  브랜드명 AURELLE과 제품명은 가상입니다.<br>
+  <b>수치 표기</b> — Amazon US · Ulta US 순서이며, 각 채널의 리뷰 내 단어 출현 건수입니다.
 </footer>
 
 </div>
