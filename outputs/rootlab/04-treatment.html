@@ -27,6 +27,7 @@
   --ink:#F2ECE1; --ink2:#B3A796; --ink3:#857B6C;
   --rule:#332D25; --rule2:#453D32;
   --accent:#B6C496; --accent-ink:#17140F;
+  --vz-s0:#D96B36; --vz-s1:#17A2BA;
   color-scheme:dark;
 }}
 *{box-sizing:border-box}
@@ -148,6 +149,40 @@ th:last-child,td:last-child{padding-right:0}
   border:1.5px solid var(--rule2);padding:4px 13px}
 .chips.own code{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 
+
+/* ---------- charts ---------- */
+.vz{margin:26px 0 30px;padding:24px 26px 18px;background:var(--surface);border-radius:var(--radius);
+  --s0:var(--vz-s0,#BE5418); --s1:var(--vz-s1,#00839F); --lab:120px}
+.vz figcaption{display:block;margin:0 0 4px}
+.vz figcaption b{display:block;font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-size:17px;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.vz figcaption span{display:block;margin-top:6px;font-size:13.5px;line-height:1.55;color:var(--ink2);max-width:58ch}
+.vz-leg{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0 4px}
+.vz-leg span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2)}
+.vz-leg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.vz-leg i.s0,.vz-bar.s0{background:var(--s0)}
+.vz-leg i.s1,.vz-bar.s1{background:var(--s1)}
+.vz-rows{margin:16px 0 4px}
+.vz-row{display:grid;grid-template-columns:var(--lab) 1fr auto;
+  gap:14px;align-items:center;padding:5px 0;border-radius:8px}
+.vz-row:hover,.vz-row:focus-visible{background:var(--surface2)}
+.vz-lab{font-size:13.5px;line-height:1.35;color:var(--ink2);word-break:keep-all}
+.vz-track{position:relative;display:flex;align-items:center;gap:10px;min-height:20px}
+.vz-bar{height:13px;border-radius:0 4px 4px 0;min-width:3px;
+  box-shadow:0 0 0 2px var(--surface)}
+.vz-val{font-family:"Archivo",sans-serif;font-size:12.5px;font-weight:800;
+  color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vz-tag{font-family:"Archivo",sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;
+  color:var(--ink3);white-space:nowrap;text-align:right;min-width:0}
+.vz-tbl{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px}
+.vz-tbl summary{font-size:12.5px;color:var(--ink3);cursor:pointer}
+.vz-tbl table{min-width:0;margin-top:8px}
+.vz-tbl th{text-align:left;font-weight:500;color:var(--ink2);font-size:13.5px;
+  padding:7px 16px 7px 0;border-bottom:1px solid var(--rule);text-transform:none;letter-spacing:0}
+.vz-tbl td{font-variant-numeric:tabular-nums;font-weight:700;padding:7px 0;border-bottom:1px solid var(--rule)}
+.vz-src{margin:12px 0 0;font-size:11.5px;color:var(--ink3)}
+@media(max-width:560px){.vz-row{grid-template-columns:1fr auto;}.vz-track{grid-column:1/-1}}
+
 .todo{display:inline-block;background:var(--accent);color:var(--accent-ink);
   border-radius:999px;padding:2px 10px;font-size:11.5px;
   font-family:"Archivo",sans-serif;font-weight:800;
@@ -162,7 +197,8 @@ th:last-child,td:last-child{padding-right:0}
 @media print{
   .ann,.hdr,.cta,.toc,.ft{display:none}
   body{background:#fff}
-  .scroll,blockquote,.chk{background:#fff;border:1px solid #ddd}
+  .scroll,blockquote,.chk,.vz{background:#fff;border:1px solid #ddd}
+  .vz-tbl[open],.vz-tbl{display:block}
   .check{display:block}
 }
 </style>
@@ -186,12 +222,12 @@ th:last-child,td:last-child{padding-right:0}
 
 <main class="body">
   <div class="col">
-    <nav class="toc"><span class="u">목차</span><ol><li><a href="#d3s0">ROOTLAB 브랜드 소개</a></li><li><a href="#d3s1">이 제품을 고르는 이유</a></li><li><a href="#d3s2">뭐가 들었나?</a></li><li><a href="#d3s3">어떻게 쓰나?</a></li><li><a href="#d3s4">이건 꼭 확인해 주세요</a></li><li><a href="#d3s5">Quick Facts</a></li><li><a href="#d3s6">이 제품을 설명한 영상</a></li></ol></nav>
+    <nav class="toc"><span class="u">목차</span><ol><li><a href="#d4s0">ROOTLAB 브랜드 소개</a></li><li><a href="#d4s1">이 제품을 고르는 이유</a></li><li><a href="#d4s2">뭐가 들었나?</a></li><li><a href="#d4s3">어떻게 쓰나?</a></li><li><a href="#d4s4">이건 꼭 확인해 주세요</a></li><li><a href="#d4s5">Quick Facts</a></li><li><a href="#d4s6">이 제품을 설명한 영상</a></li></ol></nav>
     <blockquote>
 <p><strong>루트랩 식물성 단백질 트리트먼트</strong> · 250ml / 세트 26,800원 · 2027년 1월 출시</p>
 </blockquote>
 <p><strong>제품 이미지</strong> — 차광 펌프 용기 <span class="todo">입력 필요</span></p>
-<h3 id="d3s0">ROOTLAB 브랜드 소개</h3>
+<h3 id="d4s0">ROOTLAB 브랜드 소개</h3>
 <p><strong>ROOTLAB</strong>은 스킨케어 성분을 헤어케어에 접목한 <strong>스칼프-바이오 브랜드</strong>입니다.
 두피 저자극과 쿨링에서 출발해, 이번에 모발까지 케어 범위를 넓혔습니다.</p>
 <p><strong>브랜드가 지키는 것</strong></p>
@@ -200,7 +236,7 @@ th:last-child,td:last-child{padding-right:0}
 <li><strong>실리콘으로 덮지 않는다</strong> — 코팅이 아니라 채우는 방식</li>
 <li><strong>긁어내지 않는다</strong> — 소금·스크럽 입자 없이</li>
 </ul>
-<h3 id="d3s1">이 제품을 고르는 이유</h3>
+<h3 id="d4s1">이 제품을 고르는 이유</h3>
 <p>씻고 나서 뻣뻣해진 머리를 위한 트리트먼트입니다.</p>
 <ul>
 <li><strong>실리콘으로 덮지 않습니다</strong> — 단백질로 채우는 방식입니다</li>
@@ -208,7 +244,7 @@ th:last-child,td:last-child{padding-right:0}
 <li><strong>고농축 멜팅 밤</strong> — 손에서 녹아 모발에 펴집니다</li>
 <li><strong>샴푸와 같은 계열 향</strong> — 같이 써도 향이 부딪히지 않습니다</li>
 </ul>
-<h3 id="d3s2">뭐가 들었나?</h3>
+<h3 id="d4s2">뭐가 들었나?</h3>
 <div class="scroll"><table>
 <thead>
 <tr>
@@ -236,14 +272,14 @@ th:last-child,td:last-child{padding-right:0}
 </tbody>
 </table></div>
 <p><strong>제형</strong> 고농축 멜팅 밤 · <strong>향</strong> 은은한 허브 계열 (샴푸와 동일) · <strong>실리콘 프리</strong></p>
-<h3 id="d3s3">어떻게 쓰나?</h3>
+<h3 id="d4s3">어떻게 쓰나?</h3>
 <ul>
 <li>샴푸 후 물기를 짜고</li>
 <li>펌프 1~2회, 손에서 녹여 모발 중간부터 끝까지</li>
 <li>3분 두기</li>
 <li>헹구기. 끝 🚿</li>
 </ul>
-<h3 id="d3s4">이건 꼭 확인해 주세요</h3><div class="check"><div class="chk"><h5>덜 때</h5><ul>
+<h3 id="d4s4">이건 꼭 확인해 주세요</h3><div class="check"><div class="chk"><h5>덜 때</h5><ul>
 <li>향</li>
 <li>멜팅 밤 제형 — 손에서 녹는지, 얼마나 걸리는지</li>
 </ul></div><div class="chk"><h5>바를 때</h5><ul>
@@ -267,7 +303,7 @@ th:last-child,td:last-child{padding-right:0}
 <blockquote>
 <p>🌾 <strong>헹군 직후와 말린 뒤를 나눠서 말해주세요.</strong> 이 카테고리 리뷰에서 가장 많이 갈리는 지점입니다. 경쟁 제품들은 "미끌거리는 잔여감", "너무 무거운 영양감"이 반복 지적됩니다.</p>
 </blockquote>
-<h3 id="d3s5">Quick Facts</h3>
+<h3 id="d4s5">Quick Facts</h3>
 <p><strong>확인된 것</strong></p>
 <ul>
 <li>실리콘 프리</li>
@@ -301,7 +337,7 @@ th:last-child,td:last-child{padding-right:0}
 </tbody>
 </table></div>
 <p><strong>해시태그</strong> <code>#식물성단백질</code> <code>#단백질본딩</code> <code>#손상모복구</code> <code>#실리콘프리</code></p>
-<h3 id="d3s6">이 제품을 설명한 영상</h3>
+<h3 id="d4s6">이 제품을 설명한 영상</h3>
 <ul>
 <li><span class="todo">입력 필요</span></li>
 </ul>

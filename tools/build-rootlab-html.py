@@ -7,6 +7,11 @@ TPL = 'tools/rootlab-template.html'
 OUT = 'outputs/rootlab'
 
 META = [
+    dict(file='00-plan.html',       nav='운영 계획', accent='#5C4B3A', accent_d='#C2A382',
+         badge='내부용 · 배포 금지',
+         sub='CAMPAIGN PLAN',
+         intro='제품 · 소비자 언어 · 그 위에서 내린 결정 · 제품별 콘텐츠 순으로 정리한 내부 문서입니다.',
+         internal=True),
     dict(file='01-campaign.html',   nav='캠페인',     accent='#6F5B45', accent_d='#C9A87C',
          badge='크리에이터 배포용 · 공통',
          sub='SUNDAY 3-STEP',
@@ -42,6 +47,66 @@ def render(md_text):
                lambda m: '<span class="todo">입력 필요%s</span>' % html.escape(m.group(1)), h)
     h = re.sub(r'<table>.*?</table>', lambda m: '<div class="scroll">%s</div>' % m.group(0), h, flags=re.S)
     return h
+
+
+
+# ---------- charts ----------
+CH_LIGHT, CH_DARK = ('#BE5418', '#00839F'), ('#D96B36', '#17A2BA')
+
+CHART1 = dict(
+    title='헤어케어 성분 포화도',
+    note='올리브영 헤어케어 · 성분별 제품 수. 클레이와 식물성 단백질은 아직 선도 브랜드가 없습니다.',
+    src='기획안 1차 · Trendier AI',
+    unit='개', lab='120px',
+    legend=[('ROOTLAB이 선택한 성분', 0), ('이미 포화된 성분', 1)],
+    rows=[('살리실산', 213, 1, ''), ('덱스판테놀', 168, 1, ''),
+          ('클레이', 37, 0, ''), ('식물성 단백질', 28, 0, '')],
+)
+
+CHART2 = dict(
+    title='경쟁 제품의 최다 부정 리뷰',
+    note='각 제품 리뷰에서 가장 많이 반복된 불만과 그 비율. 오른쪽은 이 불만을 겨냥한 ROOTLAB 제품입니다.',
+    src='기획안 1차 · Trendier AI',
+    unit='%', lab='268px',
+    legend=[],
+    rows=[('그로우어스 스케일러 · 소금 입자 따가움', 22, 0, 'STEP 1'),
+          ('어노브 트리트먼트 · 미끌거리는 잔여감', 18, 0, 'STEP 3'),
+          ('닥터포헤어 스케일러 · 모발 뻣뻣함', 18, 0, 'STEP 1'),
+          ('어노브 샴푸 · 오후 떡짐', 15, 0, 'STEP 2'),
+          ('피노 헤어마스크 · 무거운 영양감', 14, 0, 'STEP 3'),
+          ('아로마티카 샴푸 · 거품 부족', 10, 0, 'STEP 2'),
+          ('쿤달 트리트먼트 · 지속력 부족', 9, 0, '—')],
+)
+
+
+def chart(c):
+    top = max(r[1] for r in c['rows'])
+    bars = []
+    for label, val, slot, tag in c['rows']:
+        pct = val / top * 100
+        bars.append(
+            '<div class="vz-row" tabindex="0" data-tip="%s — %s%s">'
+            '<div class="vz-lab">%s</div>'
+            '<div class="vz-track"><div class="vz-bar s%d" style="width:%.1f%%"></div>'
+            '<span class="vz-val">%s%s</span></div>'
+            '<div class="vz-tag">%s</div></div>'
+            % (html.escape(label), val, c['unit'], html.escape(label),
+               slot, pct, val, c['unit'], html.escape(tag)))
+    leg = ''
+    if c['legend']:
+        leg = '<div class="vz-leg">%s</div>' % ''.join(
+            '<span><i class="s%d"></i>%s</span>' % (slot, html.escape(t))
+            for t, slot in c['legend'])
+    rows_tbl = ''.join('<tr><th>%s</th><td>%s%s</td></tr>'
+                       % (html.escape(l), v, c['unit']) for l, v, _, _ in c['rows'])
+    return ('<figure class="vz" style="--lab:%s">' % c['lab'] + (
+            '<figcaption><b>%s</b><span>%s</span></figcaption>'
+            '%s<div class="vz-rows">%s</div>'
+            '<details class="vz-tbl"><summary>값으로 보기</summary>'
+            '<table><tbody>%s</tbody></table></details>'
+            '<p class="vz-src">%s</p></figure>'
+            % (html.escape(c['title']), html.escape(c['note']), leg,
+               ''.join(bars), rows_tbl, html.escape(c['src']))))
 
 
 CHK_RE = re.compile(r'<p><strong>([^<]+)</strong></p>\s*<ul>(.*?)</ul>', re.S)
@@ -103,13 +168,18 @@ tpl = open(TPL).read()
 
 for i, d in enumerate(docs):
     body = with_ids(lede(checkboard(render(d['md']))), i)
+    body = body.replace('<p>{{CHART1}}</p>', chart(CHART1)) \
+               .replace('<p>{{CHART2}}</p>', chart(CHART2))
     toc = ''.join('<li><a href="#d%ds%d">%s</a></li>' % (i, j, html.escape(t))
                   for j, t in enumerate(headings(d['md'])))
     nav = ''.join('<a href="%s"%s>%s</a>'
                   % (META[j]['file'], ' aria-current="page"' if j == i else '',
                      html.escape(META[j]['nav']))
-                  for j in range(len(docs)))
+                  for j in range(len(docs))
+                  if META[i].get('internal') or not META[j].get('internal'))
     nxt = (i + 1) % len(docs)
+    if META[nxt].get('internal'):
+        nxt = (nxt + 1) % len(docs)
     todo = body.count('class="todo"')
     page = (tpl
             .replace('{{TITLE}}', html.escape('ROOTLAB — ' + META[i]['nav']))

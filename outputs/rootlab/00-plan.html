@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROOTLAB — 운영 계획</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#E9E3D8;
+  --surface:#F6F2EA;
+  --surface2:#FFFDF8;
+  --ink:#231D16;
+  --ink2:#6B5F51;
+  --ink3:#9A8E7E;
+  --rule:#DAD1C2;
+  --rule2:#C8BDAA;
+  --accent:#5C4B3A;
+  --accent-ink:#FFFDF8;
+  --radius:14px;
+  color-scheme:light;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17140F; --surface:#211D17; --surface2:#2A251E;
+  --ink:#F2ECE1; --ink2:#B3A796; --ink3:#857B6C;
+  --rule:#332D25; --rule2:#453D32;
+  --accent:#C2A382; --accent-ink:#17140F;
+  --vz-s0:#D96B36; --vz-s1:#17A2BA;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Archivo","Noto Sans KR",system-ui,sans-serif;
+  font-size:16px;line-height:1.72;letter-spacing:-.011em;word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.u{font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+.ann{background:var(--accent);color:var(--accent-ink);text-align:center;padding:9px 20px}
+.ann span{font-size:13.5px;font-weight:700;letter-spacing:-.005em}
+.ann b{text-decoration:underline;text-underline-offset:3px;font-weight:800}
+
+.hdr{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px clamp(20px,4vw,48px)}
+.mark{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:105%;
+  font-size:19px;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+.mark sup{font-size:.5em;vertical-align:super;font-weight:700}
+.hnav{display:flex;gap:20px;flex-wrap:wrap;margin-left:12px}
+.hnav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink2);
+  letter-spacing:-.015em;white-space:nowrap}
+.hnav a:hover{color:var(--ink)}
+.hnav a[aria-current]{color:var(--ink);font-weight:700}
+.cta{margin-left:auto;display:inline-block;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:11px 22px;font-size:13.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
+
+.hero{text-align:center;padding:clamp(40px,7vw,86px) clamp(20px,5vw,48px) clamp(34px,5vw,60px)}
+.badge{display:inline-block;background:var(--ink);color:var(--bg);
+  border-radius:999px;padding:7px 16px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:clamp(24px,4vw,40px)}
+.hero h1{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:800;font-stretch:100%;
+  font-size:clamp(38px,8vw,92px);line-height:.96;letter-spacing:-.045em;margin:0;text-wrap:balance}
+.hero .sub{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(19px,3.2vw,34px);line-height:1.18;letter-spacing:-.03em;
+  margin-top:clamp(14px,2vw,22px);color:var(--accent);text-wrap:balance}
+.hero .intro{max-width:46ch;margin:clamp(28px,5vw,54px) auto 0;
+  font-size:clamp(16px,1.9vw,18px);line-height:1.62;color:var(--ink2)}
+
+.body{padding:0 clamp(20px,5vw,48px) 110px}
+.col{max-width:780px;margin:0 auto}
+
+.toc{background:var(--surface);border-radius:var(--radius);padding:26px 28px;margin-bottom:clamp(40px,6vw,64px)}
+.toc .u{font-size:11.5px;color:var(--ink3);display:block;margin-bottom:14px}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:32px}
+@media(max-width:640px){.toc ol{columns:1}}
+.toc li{break-inside:avoid;margin-bottom:7px}
+.toc a{text-decoration:none;font-size:14.5px;color:var(--ink2);line-height:1.45;display:block}
+.toc a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+h2,h3,h4{font-family:"Archivo","Noto Sans KR",sans-serif;letter-spacing:-.032em;text-wrap:balance}
+h2{font-size:clamp(26px,4.2vw,40px);font-weight:800;line-height:1.06;margin:clamp(52px,8vw,86px) 0 20px}
+h3{font-size:clamp(20px,2.6vw,27px);font-weight:700;line-height:1.16;margin:52px 0 14px;
+   padding-top:20px;border-top:1px solid var(--rule2)}
+h4{font-size:17px;font-weight:700;margin:30px 0 10px;letter-spacing:-.022em}
+p{margin:0 0 16px;max-width:66ch}
+ul,ol{margin:0 0 18px;padding-left:22px;max-width:66ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink3)}
+strong{font-weight:700}
+em{font-style:normal;color:var(--ink2);background:var(--surface);
+   border-radius:8px;padding:3px 10px;display:inline-block;margin:2px 0}
+hr{border:0;border-top:1px solid var(--rule2);margin:56px 0}
+
+blockquote{background:var(--surface2);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius) var(--radius) 0;
+  margin:26px 0;padding:22px 26px;color:var(--ink2);font-size:15.5px;max-width:none}
+blockquote p{margin-bottom:10px;max-width:60ch}
+blockquote p:last-child{margin-bottom:0}
+blockquote strong{color:var(--ink)}
+
+code{font-family:"Archivo",sans-serif;font-weight:700;font-size:.88em;
+  background:var(--surface);color:var(--ink2);
+  border-radius:999px;padding:3px 12px;white-space:nowrap;letter-spacing:-.01em}
+
+.scroll{background:var(--surface);border-radius:var(--radius);
+  padding:6px 24px 10px;margin:22px 0 30px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14.5px;line-height:1.55;
+  font-variant-numeric:tabular-nums}
+thead th{text-align:left;font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);
+  padding:18px 18px 12px 0;border-bottom:1px solid var(--rule);white-space:nowrap;vertical-align:bottom}
+tbody td{padding:15px 18px 15px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+th:last-child,td:last-child{padding-right:0}
+.scroll th:first-child,.scroll td:first-child{min-width:120px}
+
+/* ---------- checklist board ---------- */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:14px;margin:22px 0 26px}
+.chk{background:var(--surface);border-radius:var(--radius);padding:20px 22px}
+.chk h5{margin:0 0 12px;font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.chk ul{list-style:none;margin:0;padding:0}
+.chk li{position:relative;padding-left:26px;margin-bottom:10px;font-size:14.5px;line-height:1.5}
+.chk li:last-child{margin-bottom:0}
+.chk li::before{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;
+  border:1.5px solid var(--rule2);border-radius:4px}
+
+.lede{background:var(--surface);border-radius:var(--radius);padding:22px 26px;margin:22px 0 30px}
+.lede p{margin:0 0 9px;max-width:60ch;font-size:15.5px;line-height:1.62}
+.lede p:first-child{font-size:17px;color:var(--ink)}
+.lede p:last-child{margin-bottom:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px;max-width:none}
+.chips .lbl{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);margin-right:4px}
+.chips code{background:var(--surface);color:var(--ink2);
+  border:1.5px solid var(--rule2);padding:4px 13px}
+.chips.own code{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+
+/* ---------- charts ---------- */
+.vz{margin:26px 0 30px;padding:24px 26px 18px;background:var(--surface);border-radius:var(--radius);
+  --s0:var(--vz-s0,#BE5418); --s1:var(--vz-s1,#00839F); --lab:120px}
+.vz figcaption{display:block;margin:0 0 4px}
+.vz figcaption b{display:block;font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-size:17px;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
+.vz figcaption span{display:block;margin-top:6px;font-size:13.5px;line-height:1.55;color:var(--ink2);max-width:58ch}
+.vz-leg{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0 4px}
+.vz-leg span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink2)}
+.vz-leg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.vz-leg i.s0,.vz-bar.s0{background:var(--s0)}
+.vz-leg i.s1,.vz-bar.s1{background:var(--s1)}
+.vz-rows{margin:16px 0 4px}
+.vz-row{display:grid;grid-template-columns:var(--lab) 1fr auto;
+  gap:14px;align-items:center;padding:5px 0;border-radius:8px}
+.vz-row:hover,.vz-row:focus-visible{background:var(--surface2)}
+.vz-lab{font-size:13.5px;line-height:1.35;color:var(--ink2);word-break:keep-all}
+.vz-track{position:relative;display:flex;align-items:center;gap:10px;min-height:20px}
+.vz-bar{height:13px;border-radius:0 4px 4px 0;min-width:3px;
+  box-shadow:0 0 0 2px var(--surface)}
+.vz-val{font-family:"Archivo",sans-serif;font-size:12.5px;font-weight:800;
+  color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vz-tag{font-family:"Archivo",sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.08em;
+  color:var(--ink3);white-space:nowrap;text-align:right;min-width:0}
+.vz-tbl{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px}
+.vz-tbl summary{font-size:12.5px;color:var(--ink3);cursor:pointer}
+.vz-tbl table{min-width:0;margin-top:8px}
+.vz-tbl th{text-align:left;font-weight:500;color:var(--ink2);font-size:13.5px;
+  padding:7px 16px 7px 0;border-bottom:1px solid var(--rule);text-transform:none;letter-spacing:0}
+.vz-tbl td{font-variant-numeric:tabular-nums;font-weight:700;padding:7px 0;border-bottom:1px solid var(--rule)}
+.vz-src{margin:12px 0 0;font-size:11.5px;color:var(--ink3)}
+@media(max-width:560px){.vz-row{grid-template-columns:1fr auto;}.vz-track{grid-column:1/-1}}
+
+.todo{display:inline-block;background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:2px 10px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;vertical-align:1px}
+
+.ft{border-top:1px solid var(--rule2);padding:38px clamp(20px,5vw,48px) 56px}
+.ft-in{max-width:780px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:baseline}
+.ft .u{font-size:11.5px;color:var(--ink3)}
+.ft .next{margin-left:auto;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:-.015em}
+.ft .next:hover{text-decoration:underline;text-underline-offset:4px}
+
+@media print{
+  .ann,.hdr,.cta,.toc,.ft{display:none}
+  body{background:#fff}
+  .scroll,blockquote,.chk,.vz{background:#fff;border:1px solid #ddd}
+  .vz-tbl[open],.vz-tbl{display:block}
+  .check{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="ann"><span>1차 기획안 기준 초안 · 처방과 임상 확정 후 갱신 → <b>캠페인</b></span></div>
+
+<header class="hdr">
+  <div class="mark">ROOTLAB<sup>™</sup></div>
+  <nav class="hnav"><a href="00-plan.html" aria-current="page">운영 계획</a><a href="01-campaign.html">캠페인</a><a href="02-scaler.html">스케일러</a><a href="03-shampoo.html">샴푸</a><a href="04-treatment.html">트리트먼트</a></nav>
+  <a class="cta" href="01-campaign.html">캠페인</a>
+</header>
+
+<section class="hero">
+  <span class="badge">내부용 · 배포 금지</span>
+  <h1>운영 계획</h1>
+  <div class="sub">CAMPAIGN PLAN</div>
+  <p class="intro">제품 · 소비자 언어 · 그 위에서 내린 결정 · 제품별 콘텐츠 순으로 정리한 내부 문서입니다.</p>
+</section>
+
+<main class="body">
+  <div class="col">
+    <nav class="toc"><span class="u">목차</span><ol><li><a href="#d0s0">1. 제품</a></li><li><a href="#d0s1">라인 3종</a></li><li><a href="#d0s2">3-STEP이 성립하는 조건</a></li><li><a href="#d0s3">지금 확정된 것과 아닌 것</a></li><li><a href="#d0s4">2. 실제 소비자 언어</a></li><li><a href="#d0s5">샴푸에서 반복되는 말</a></li><li><a href="#d0s6">트리트먼트에서 반복되는 말</a></li><li><a href="#d0s7">스케일러 — 미결</a></li><li><a href="#d0s8">성분 포화도</a></li><li><a href="#d0s9">경쟁 제품이 실제로 듣고 있는 불만</a></li><li><a href="#d0s10">분석 범위와 한계</a></li><li><a href="#d0s11">3. 이 데이터로 내린 결정</a></li><li><a href="#d0s12">4. 제품별로 만들 콘텐츠</a></li><li><a href="#d0s13">스케일러 — SCALE-DOWN</a></li><li><a href="#d0s14">샴푸 — CLEANSE-DOWN</a></li><li><a href="#d0s15">트리트먼트 — PROTEIN-FILL</a></li><li><a href="#d0s16">공통으로 확인할 것</a></li><li><a href="#d0s17">5. 아직 정하지 못한 것</a></li></ol></nav>
+    <p>마케팅팀과 대행사가 함께 보는 문서입니다. 크리에이터에게는 전달하지 않습니다.</p>
+<h2 id="d0s0">1. 제품</h2>
+<h3 id="d0s1">라인 3종</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th></th>
+<th>두피 스케일러</th>
+<th>딥클렌징 샴푸</th>
+<th>단백질 트리트먼트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>컨셉</strong></td>
+<td>SCALE-DOWN</td>
+<td>CLEANSE-DOWN</td>
+<td>PROTEIN-FILL</td>
+</tr>
+<tr>
+<td><strong>용량 · 가격</strong></td>
+<td>200ml · 24,000원</td>
+<td>500ml · 19,800원</td>
+<td>250ml · 세트 26,800원</td>
+</tr>
+<tr>
+<td><strong>제형</strong></td>
+<td>소프트 머드 크림</td>
+<td>고밀도 거품</td>
+<td>고농축 멜팅 밤</td>
+</tr>
+<tr>
+<td><strong>사용 주기</strong></td>
+<td>주 1~2회</td>
+<td>매일</td>
+<td>매일</td>
+</tr>
+<tr>
+<td><strong>핵심 성분</strong></td>
+<td>카올린 · 쿨링 · 식물성 LPP</td>
+<td>카올린 · 아미노산계</td>
+<td>식물성 LPP</td>
+</tr>
+<tr>
+<td><strong>용기</strong></td>
+<td>불투명 튜브 · 광폭 노즐</td>
+<td>직선형 실린더 · 무광</td>
+<td>차광 펌프</td>
+</tr>
+<tr>
+<td><strong>기능성</strong></td>
+<td>탈모증상완화 보고 검토</td>
+<td>일반 화장품</td>
+<td>해당 없음</td>
+</tr>
+<tr>
+<td><strong>출시</strong></td>
+<td>2027.01 · 올리브영 온·오프</td>
+<td>2027.01 · 올리브영 온·오프</td>
+<td>2027.01 · 올리브영 온·오프</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d0s2">3-STEP이 성립하는 조건</h3>
+<ul>
+<li>세 제품은 <strong>스케일러 → 샴푸 → 트리트먼트</strong> 순서로 한 번의 세정에서 이어짐</li>
+<li>스케일러가 주 1~2회이므로, 세 제품이 모두 쓰이는 날은 <strong>스케일링 하는 날</strong> 하루</li>
+<li>다만 기획안에 "단계별 시너지 시험 결과에 따라 3-Step 구조의 성립 여부가 결정됨"으로 명시</li>
+<li>따라서 <strong>순서는 보여주되 시너지는 주장하지 않는다</strong>가 이번 캠페인의 전제</li>
+</ul>
+<h3 id="d0s3">지금 확정된 것과 아닌 것</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>확정</th>
+<th>미확정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제품명·용량·가격·제형·용기</td>
+<td>처방 상세 (클레이 배합비, 단백질 상한, 실리콘 대체재)</td>
+</tr>
+<tr>
+<td>카올린·식물성 LPP 사용</td>
+<td>공식 사용법 (젖은/마른 두피, 방치 시간)</td>
+</tr>
+<tr>
+<td>실리콘 프리</td>
+<td>전 임상 수치 — 전부 목표치, 측정 후 확정</td>
+</tr>
+<tr>
+<td>출시 시점과 채널</td>
+<td>탈모증상완화 기능성 보고 일정</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="d0s4">2. 실제 소비자 언어</h2>
+<h3 id="d0s5">샴푸에서 반복되는 말</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>표현</th>
+<th>건수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>거품 <code>bubble</code></td>
+<td>19,453</td>
+</tr>
+<tr>
+<td>2</td>
+<td>세정력 <code>cleansing_power</code></td>
+<td>8,245</td>
+</tr>
+<tr>
+<td>3</td>
+<td>볼륨감 <code>voluminous</code></td>
+<td>7,378</td>
+</tr>
+<tr>
+<td>4</td>
+<td>시원함 <code>coolness</code></td>
+<td>7,110</td>
+</tr>
+<tr>
+<td>5</td>
+<td>부드러움 <code>soft</code></td>
+<td>4,117</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d0s6">트리트먼트에서 반복되는 말</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>순위</th>
+<th>표현</th>
+<th>건수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>모발결 <code>hair_texture</code></td>
+<td>15,969</td>
+</tr>
+<tr>
+<td>2</td>
+<td>부드러움 <code>soft</code></td>
+<td>8,617</td>
+</tr>
+<tr>
+<td>3</td>
+<td>제형 <code>formulation</code></td>
+<td>5,518</td>
+</tr>
+<tr>
+<td>4</td>
+<td>윤기 <code>glow</code></td>
+<td>2,605</td>
+</tr>
+<tr>
+<td>5</td>
+<td>영양감 <code>nourish</code></td>
+<td>2,387</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d0s7">스케일러 — 미결</h3>
+<ul>
+<li>상위 3개 제품(솔랩 아쿠아픽, 닥터포헤어 씨솔트, 그로우어스 씨솔트) 리뷰에서는 <code>coolness</code> 662건, <code>bubble</code> 357건, <code>massage</code> 145건, <code>clean</code> 113건 확인</li>
+<li>그러나 올리브영 <strong>두피용 제품 분류는 해당 기간 카테고리 집계 없음</strong></li>
+<li>제품 단위로는 잡히고 카테고리 단위로는 없는 상태. 어느 기준을 쓸지 확정 필요</li>
+<li><code>bubble</code> 357건은 기준 제품 셋 중 둘이 <strong>씨솔트(거품 내는 제품)</strong>라서 나온 수치. 우리 제품에 그대로 적용 불가</li>
+</ul>
+<h3 id="d0s8">성분 포화도</h3>
+<figure class="vz" style="--lab:120px"><figcaption><b>헤어케어 성분 포화도</b><span>올리브영 헤어케어 · 성분별 제품 수. 클레이와 식물성 단백질은 아직 선도 브랜드가 없습니다.</span></figcaption><div class="vz-leg"><span><i class="s0"></i>ROOTLAB이 선택한 성분</span><span><i class="s1"></i>이미 포화된 성분</span></div><div class="vz-rows"><div class="vz-row" tabindex="0" data-tip="살리실산 — 213개"><div class="vz-lab">살리실산</div><div class="vz-track"><div class="vz-bar s1" style="width:100.0%"></div><span class="vz-val">213개</span></div><div class="vz-tag"></div></div><div class="vz-row" tabindex="0" data-tip="덱스판테놀 — 168개"><div class="vz-lab">덱스판테놀</div><div class="vz-track"><div class="vz-bar s1" style="width:78.9%"></div><span class="vz-val">168개</span></div><div class="vz-tag"></div></div><div class="vz-row" tabindex="0" data-tip="클레이 — 37개"><div class="vz-lab">클레이</div><div class="vz-track"><div class="vz-bar s0" style="width:17.4%"></div><span class="vz-val">37개</span></div><div class="vz-tag"></div></div><div class="vz-row" tabindex="0" data-tip="식물성 단백질 — 28개"><div class="vz-lab">식물성 단백질</div><div class="vz-track"><div class="vz-bar s0" style="width:13.1%"></div><span class="vz-val">28개</span></div><div class="vz-tag"></div></div></div><details class="vz-tbl"><summary>값으로 보기</summary><table><tbody><tr><th>살리실산</th><td>213개</td></tr><tr><th>덱스판테놀</th><td>168개</td></tr><tr><th>클레이</th><td>37개</td></tr><tr><th>식물성 단백질</th><td>28개</td></tr></tbody></table></details><p class="vz-src">기획안 1차 · Trendier AI</p></figure>
+<h3 id="d0s9">경쟁 제품이 실제로 듣고 있는 불만</h3>
+<figure class="vz" style="--lab:268px"><figcaption><b>경쟁 제품의 최다 부정 리뷰</b><span>각 제품 리뷰에서 가장 많이 반복된 불만과 그 비율. 오른쪽은 이 불만을 겨냥한 ROOTLAB 제품입니다.</span></figcaption><div class="vz-rows"><div class="vz-row" tabindex="0" data-tip="그로우어스 스케일러 · 소금 입자 따가움 — 22%"><div class="vz-lab">그로우어스 스케일러 · 소금 입자 따가움</div><div class="vz-track"><div class="vz-bar s0" style="width:100.0%"></div><span class="vz-val">22%</span></div><div class="vz-tag">STEP 1</div></div><div class="vz-row" tabindex="0" data-tip="어노브 트리트먼트 · 미끌거리는 잔여감 — 18%"><div class="vz-lab">어노브 트리트먼트 · 미끌거리는 잔여감</div><div class="vz-track"><div class="vz-bar s0" style="width:81.8%"></div><span class="vz-val">18%</span></div><div class="vz-tag">STEP 3</div></div><div class="vz-row" tabindex="0" data-tip="닥터포헤어 스케일러 · 모발 뻣뻣함 — 18%"><div class="vz-lab">닥터포헤어 스케일러 · 모발 뻣뻣함</div><div class="vz-track"><div class="vz-bar s0" style="width:81.8%"></div><span class="vz-val">18%</span></div><div class="vz-tag">STEP 1</div></div><div class="vz-row" tabindex="0" data-tip="어노브 샴푸 · 오후 떡짐 — 15%"><div class="vz-lab">어노브 샴푸 · 오후 떡짐</div><div class="vz-track"><div class="vz-bar s0" style="width:68.2%"></div><span class="vz-val">15%</span></div><div class="vz-tag">STEP 2</div></div><div class="vz-row" tabindex="0" data-tip="피노 헤어마스크 · 무거운 영양감 — 14%"><div class="vz-lab">피노 헤어마스크 · 무거운 영양감</div><div class="vz-track"><div class="vz-bar s0" style="width:63.6%"></div><span class="vz-val">14%</span></div><div class="vz-tag">STEP 3</div></div><div class="vz-row" tabindex="0" data-tip="아로마티카 샴푸 · 거품 부족 — 10%"><div class="vz-lab">아로마티카 샴푸 · 거품 부족</div><div class="vz-track"><div class="vz-bar s0" style="width:45.5%"></div><span class="vz-val">10%</span></div><div class="vz-tag">STEP 2</div></div><div class="vz-row" tabindex="0" data-tip="쿤달 트리트먼트 · 지속력 부족 — 9%"><div class="vz-lab">쿤달 트리트먼트 · 지속력 부족</div><div class="vz-track"><div class="vz-bar s0" style="width:40.9%"></div><span class="vz-val">9%</span></div><div class="vz-tag">—</div></div></div><details class="vz-tbl"><summary>값으로 보기</summary><table><tbody><tr><th>그로우어스 스케일러 · 소금 입자 따가움</th><td>22%</td></tr><tr><th>어노브 트리트먼트 · 미끌거리는 잔여감</th><td>18%</td></tr><tr><th>닥터포헤어 스케일러 · 모발 뻣뻣함</th><td>18%</td></tr><tr><th>어노브 샴푸 · 오후 떡짐</th><td>15%</td></tr><tr><th>피노 헤어마스크 · 무거운 영양감</th><td>14%</td></tr><tr><th>아로마티카 샴푸 · 거품 부족</th><td>10%</td></tr><tr><th>쿤달 트리트먼트 · 지속력 부족</th><td>9%</td></tr></tbody></table></details><p class="vz-src">기획안 1차 · Trendier AI</p></figure>
+<h3 id="d0s10">분석 범위와 한계</h3>
+<ul>
+<li>샴푸·트리트먼트 카테고리 언어는 2026.01–06 집계이며 <strong>5–6월 리뷰 0건</strong>. 여름에 강해지는 <code>coolness</code>가 과소 집계됐을 수 있음</li>
+<li>기획안의 시장 데이터는 2026.03–08 리뷰 147,895건 기준. 위 언어 집계와 기간이 다름</li>
+<li>두 집계 모두 샴푸 1위 언어가 거품으로 동일. 기간이 달라도 결론은 같음</li>
+<li>키워드가 포함된 리뷰가 전부 칭찬이라는 뜻은 아님. 개별 키워드 간 동시 언급 관계는 미확인</li>
+</ul>
+<h2 id="d0s11">3. 이 데이터로 내린 결정</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>결정</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>테마를 SUNDAY 3-STEP으로 잡는다</strong></td>
+<td>세 제품이 모두 쓰이는 날은 스케일링 하는 날 하루. 제품이 셋이라 제품별 테마를 따로 잡으면 캠페인이 흩어짐</td>
+</tr>
+<tr>
+<td><strong>게시일을 일요일로 고정한다</strong></td>
+<td>20개 영상이 같은 날 노출됨. 독촉이 "이번 주 일요일"이라는 한 줄로 끝나 운영 비용도 줄어듦</td>
+</tr>
+<tr>
+<td><strong>크리에이터 1인당 제품 1개, 시간대 릴레이</strong></td>
+<td>영상 하나에 제품 셋을 넣으면 메시지가 무너짐. 오전 스케일러 · 오후 샴푸 · 저녁 트리트먼트로 하루에 루틴 한 바퀴</td>
+</tr>
+<tr>
+<td><strong>공통 필수 장면을 세정 순서로 정의한다</strong></td>
+<td>세 제품이 전부 "덜고 → 바르고 → 헹구고 → 결과" 구조. 공통 장면 하나로 세 제품을 묶을 수 있음</td>
+</tr>
+<tr>
+<td><strong>통일 요소는 소품이 아니라 촬영 조건으로 건다</strong></td>
+<td>두피 제품이라 머리에 착용물을 쓸 수 없음. ASMR(배경음악 없음) · 어깨 타월 · 보정 없음 세 조건으로 대체</td>
+</tr>
+<tr>
+<td><strong>ASMR을 포맷으로 지정한다</strong></td>
+<td>세 제형이 전부 소리가 남 — 머드의 미세 거품, 고밀도 거품, 멜팅 밤. 소리로 캠페인을 식별시킬 수 있음</td>
+</tr>
+<tr>
+<td><strong>미검증 주장을 전면 차단하고 사유를 적는다</strong></td>
+<td>임상이 전부 목표치 단계. 사유(시험 예정/목표치/보고 검토)를 함께 적어야 시험 완료 후 무엇이 풀리는지 관리됨</td>
+</tr>
+<tr>
+<td><strong>제품별 고유 키워드를 나눈다</strong></td>
+<td>세 크리에이터가 같은 말만 하면 제품이 구분되지 않음. 마사지·거품·모발결이 각자의 자리를 잡음</td>
+</tr>
+<tr>
+<td><strong>거품감을 스케일러 키워드에서 뺀다</strong></td>
+<td>기준 제품이 씨솔트라 나온 수치. 우리 제형은 물에 닿을 때만 미세 거품이 남</td>
+</tr>
+<tr>
+<td><strong>샴푸에서 거품을 핵심 소구로 남긴다</strong></td>
+<td>거품이 두 집계 모두 1위. 딥클렌징이면서 거품을 지킨 것이 아로마티카(거품 부족 10%) 대비 차별점</td>
+</tr>
+<tr>
+<td><strong>CTA를 "댓글에 두피 타입"으로 한다</strong></td>
+<td>댓글창이 그대로 두피 타입 데이터가 됨. 세 제품 모두에 동일하게 적용 가능</td>
+</tr>
+<tr>
+<td><strong>기한·링크·코드·사용권을 본문에서 DB로 내린다</strong></td>
+<td>크리에이터 브리프가 길어지면 게시율이 떨어짐. 공통 페이지는 창작 컨텍스트만</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="d0s12">4. 제품별로 만들 콘텐츠</h2>
+<h3 id="d0s13">스케일러 — SCALE-DOWN</h3>
+<ul>
+<li><strong>겨냥하는 불만</strong> 소금 입자 따가움(그로우어스 22%) · 헹궈도 남는 알갱이 · 스케일링 후 모발 뻣뻣함(닥터포헤어 18%)</li>
+<li><strong>필수 장면</strong> 머드 제형 클로즈업 · 광폭 노즐 도포 · 손끝 마사지 · 물 닿을 때 미세 거품 · 편집 없는 헹굼 · 헹군 뒤 두피와 모발</li>
+<li><strong>고유 키워드</strong> <code>마사지</code> <code>잔여물</code></li>
+<li><strong>공통 키워드</strong> <code>시원함</code> <code>쿨링감</code> <code>깨끗함</code> <code>세정력</code></li>
+<li><strong>검증할 가설</strong> 소금 스케일러 경험자가 클레이 제형을 보고 대체 의향을 보이는가</li>
+</ul>
+<h3 id="d0s14">샴푸 — CLEANSE-DOWN</h3>
+<ul>
+<li><strong>겨냥하는 불만</strong> 오후 떡짐(어노브 15%) · 거품 부족(아로마티카 10%) · 세정 후 모발 뻣뻣함</li>
+<li><strong>필수 장면</strong> 적은 양으로 거품 내는 과정 · 두피에서 퍼지는 거품 · 손끝 세정 · 헹굼 · 말린 뒤 뿌리</li>
+<li><strong>고유 키워드</strong> <code>거품</code> <code>볼륨감</code></li>
+<li><strong>공통 키워드</strong> <code>세정력</code> <code>시원함</code> <code>부드러움</code></li>
+<li><strong>검증할 가설</strong> 딥클렌징과 거품이 양립한다는 메시지가 지성 두피 사용자에게 도달하는가</li>
+</ul>
+<h3 id="d0s15">트리트먼트 — PROTEIN-FILL</h3>
+<ul>
+<li><strong>겨냥하는 불만</strong> 미끌거리는 잔여감(어노브 18%) · 무거운 영양감(피노 14%) · 지속력 부족(쿤달 9%)</li>
+<li><strong>필수 장면</strong> 멜팅 밤이 손에서 녹는 과정 · 젖은 모발 도포 · 헹굼 중 손가락 빗질 · 말린 뒤 모발결</li>
+<li><strong>고유 키워드</strong> <code>모발결</code> <code>윤기</code> <code>영양감</code></li>
+<li><strong>공통 키워드</strong> <code>부드러움</code> <code>제형</code></li>
+<li><strong>검증할 가설</strong> 실리콘 없이도 부드럽다는 메시지가 단백질 일변도 시장에서 구분되는가</li>
+</ul>
+<h3 id="d0s16">공통으로 확인할 것</h3>
+<ul>
+<li>세 제품 중 어느 콘텐츠가 저장·공유를 가장 많이 받는가</li>
+<li>조회수 1위 제품과 전환 1위 제품이 일치하는가</li>
+<li>댓글에서 수집된 두피 타입 분포가 타깃 가정과 맞는가</li>
+<li>ASMR 포맷이 이 카테고리에서 실제로 시청 지속률을 올리는가</li>
+</ul>
+<h2 id="d0s17">5. 아직 정하지 못한 것</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>막고 있는 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스케일러 필수 키워드</td>
+<td>카테고리 집계 기준 확정 필요</td>
+</tr>
+<tr>
+<td>크리에이터 동기 설계</td>
+<td>무상 시딩만으로 게시율 확보 불가. 리워드 구조 미정</td>
+</tr>
+<tr>
+<td>성과 측정 기준</td>
+<td>올리브영 채널 기준의 기준선 수집 방법 미정</td>
+</tr>
+<tr>
+<td>콘텐츠 사용권 · 보수</td>
+<td>계약 조건 미정</td>
+</tr>
+<tr>
+<td>시딩 박스 구성</td>
+<td>타월 제작 여부, 3종 전량 발송 여부</td>
+</tr>
+<tr>
+<td>브랜드 타월의 색과 소재</td>
+<td>무드 레퍼런스상 샌드 계열까지만 정해짐</td>
+</tr>
+</tbody>
+</table></div>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="ft-in">
+    <span class="u">ROOTLAB™ · SUNDAY 3-STEP</span>
+    <span class="u">입력 항목 없음</span>
+    <a class="next" href="01-campaign.html">캠페인 ›</a>
+  </div>
+</footer>
+
+</body>
+</html>
