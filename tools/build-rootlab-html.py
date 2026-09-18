@@ -79,6 +79,17 @@ CHART2 = dict(
 )
 
 
+CHART3 = dict(
+    title='가격대별 누적 리뷰 — 청량감과 거품',
+    note='같은 키워드도 가격대에 따라 무게가 다릅니다. 청량감은 2만원 이하에 몰려 있고, 거품은 전 구간의 기본 기대치입니다.',
+    src='올리브영 헤어케어 2025.09–2026.08 · Trendier AI',
+    unit='건', lab='150px',
+    legend=[('2만원 이하 (우리 구간)', 0), ('2만~5만원', 1)],
+    rows=[('청량감 · 2만원 이하', 17944, 0, ''), ('청량감 · 2만~5만원', 8240, 1, ''),
+          ('거품 · 2만원 이하', 39202, 0, ''), ('거품 · 2만~5만원', 52787, 1, '')],
+)
+
+
 def chart(c):
     top = max(r[1] for r in c['rows'])
     bars = []
@@ -90,15 +101,15 @@ def chart(c):
             '<div class="vz-track"><div class="vz-bar s%d" style="width:%.1f%%"></div>'
             '<span class="vz-val">%s%s</span></div>'
             '<div class="vz-tag">%s</div></div>'
-            % (html.escape(label), val, c['unit'], html.escape(label),
-               slot, pct, val, c['unit'], html.escape(tag)))
+            % (html.escape(label), format(val, ','), c['unit'], html.escape(label),
+               slot, pct, format(val, ','), c['unit'], html.escape(tag)))
     leg = ''
     if c['legend']:
         leg = '<div class="vz-leg">%s</div>' % ''.join(
             '<span><i class="s%d"></i>%s</span>' % (slot, html.escape(t))
             for t, slot in c['legend'])
     rows_tbl = ''.join('<tr><th>%s</th><td>%s%s</td></tr>'
-                       % (html.escape(l), v, c['unit']) for l, v, _, _ in c['rows'])
+                       % (html.escape(l), format(v, ','), c['unit']) for l, v, _, _ in c['rows'])
     return ('<figure class="vz" style="--lab:%s">' % c['lab'] + (
             '<figcaption><b>%s</b><span>%s</span></figcaption>'
             '%s<div class="vz-rows">%s</div>'
@@ -169,7 +180,8 @@ tpl = open(TPL).read()
 for i, d in enumerate(docs):
     body = with_ids(lede(checkboard(render(d['md']))), i)
     body = body.replace('<p>{{CHART1}}</p>', chart(CHART1)) \
-               .replace('<p>{{CHART2}}</p>', chart(CHART2))
+               .replace('<p>{{CHART2}}</p>', chart(CHART2)) \
+               .replace('<p>{{CHART3}}</p>', chart(CHART3))
     toc = ''.join('<li><a href="#d%ds%d">%s</a></li>' % (i, j, html.escape(t))
                   for j, t in enumerate(headings(d['md'])))
     nav = ''.join('<a href="%s"%s>%s</a>'
