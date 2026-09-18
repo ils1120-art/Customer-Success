@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROOTLAB — 캠페인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#E9E3D8;
+  --surface:#F6F2EA;
+  --surface2:#FFFDF8;
+  --ink:#231D16;
+  --ink2:#6B5F51;
+  --ink3:#9A8E7E;
+  --rule:#DAD1C2;
+  --rule2:#C8BDAA;
+  --accent:#6F5B45;
+  --accent-ink:#FFFDF8;
+  --radius:14px;
+  color-scheme:light;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17140F; --surface:#211D17; --surface2:#2A251E;
+  --ink:#F2ECE1; --ink2:#B3A796; --ink3:#857B6C;
+  --rule:#332D25; --rule2:#453D32;
+  --accent:#C9A87C; --accent-ink:#17140F;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Archivo","Noto Sans KR",system-ui,sans-serif;
+  font-size:16px;line-height:1.72;letter-spacing:-.011em;word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.u{font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+.ann{background:var(--accent);color:var(--accent-ink);text-align:center;padding:9px 20px}
+.ann span{font-size:13.5px;font-weight:700;letter-spacing:-.005em}
+.ann b{text-decoration:underline;text-underline-offset:3px;font-weight:800}
+
+.hdr{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px clamp(20px,4vw,48px)}
+.mark{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:105%;
+  font-size:19px;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+.mark sup{font-size:.5em;vertical-align:super;font-weight:700}
+.hnav{display:flex;gap:20px;flex-wrap:wrap;margin-left:12px}
+.hnav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink2);
+  letter-spacing:-.015em;white-space:nowrap}
+.hnav a:hover{color:var(--ink)}
+.hnav a[aria-current]{color:var(--ink);font-weight:700}
+.cta{margin-left:auto;display:inline-block;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:11px 22px;font-size:13.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
+
+.hero{text-align:center;padding:clamp(40px,7vw,86px) clamp(20px,5vw,48px) clamp(34px,5vw,60px)}
+.badge{display:inline-block;background:var(--ink);color:var(--bg);
+  border-radius:999px;padding:7px 16px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:clamp(24px,4vw,40px)}
+.hero h1{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:800;font-stretch:100%;
+  font-size:clamp(38px,8vw,92px);line-height:.96;letter-spacing:-.045em;margin:0;text-wrap:balance}
+.hero .sub{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(19px,3.2vw,34px);line-height:1.18;letter-spacing:-.03em;
+  margin-top:clamp(14px,2vw,22px);color:var(--accent);text-wrap:balance}
+.hero .intro{max-width:46ch;margin:clamp(28px,5vw,54px) auto 0;
+  font-size:clamp(16px,1.9vw,18px);line-height:1.62;color:var(--ink2)}
+
+.body{padding:0 clamp(20px,5vw,48px) 110px}
+.col{max-width:780px;margin:0 auto}
+
+.toc{background:var(--surface);border-radius:var(--radius);padding:26px 28px;margin-bottom:clamp(40px,6vw,64px)}
+.toc .u{font-size:11.5px;color:var(--ink3);display:block;margin-bottom:14px}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:32px}
+@media(max-width:640px){.toc ol{columns:1}}
+.toc li{break-inside:avoid;margin-bottom:7px}
+.toc a{text-decoration:none;font-size:14.5px;color:var(--ink2);line-height:1.45;display:block}
+.toc a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+h2,h3,h4{font-family:"Archivo","Noto Sans KR",sans-serif;letter-spacing:-.032em;text-wrap:balance}
+h2{font-size:clamp(26px,4.2vw,40px);font-weight:800;line-height:1.06;margin:clamp(52px,8vw,86px) 0 20px}
+h3{font-size:clamp(20px,2.6vw,27px);font-weight:700;line-height:1.16;margin:52px 0 14px;
+   padding-top:20px;border-top:1px solid var(--rule2)}
+h4{font-size:17px;font-weight:700;margin:30px 0 10px;letter-spacing:-.022em}
+p{margin:0 0 16px;max-width:66ch}
+ul,ol{margin:0 0 18px;padding-left:22px;max-width:66ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink3)}
+strong{font-weight:700}
+em{font-style:normal;color:var(--ink2);background:var(--surface);
+   border-radius:8px;padding:3px 10px;display:inline-block;margin:2px 0}
+hr{border:0;border-top:1px solid var(--rule2);margin:56px 0}
+
+blockquote{background:var(--surface2);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius) var(--radius) 0;
+  margin:26px 0;padding:22px 26px;color:var(--ink2);font-size:15.5px;max-width:none}
+blockquote p{margin-bottom:10px;max-width:60ch}
+blockquote p:last-child{margin-bottom:0}
+blockquote strong{color:var(--ink)}
+
+code{font-family:"Archivo",sans-serif;font-weight:700;font-size:.88em;
+  background:var(--surface);color:var(--ink2);
+  border-radius:999px;padding:3px 12px;white-space:nowrap;letter-spacing:-.01em}
+
+.scroll{background:var(--surface);border-radius:var(--radius);
+  padding:6px 24px 10px;margin:22px 0 30px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14.5px;line-height:1.55;
+  font-variant-numeric:tabular-nums}
+thead th{text-align:left;font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);
+  padding:18px 18px 12px 0;border-bottom:1px solid var(--rule);white-space:nowrap;vertical-align:bottom}
+tbody td{padding:15px 18px 15px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+th:last-child,td:last-child{padding-right:0}
+.scroll th:first-child,.scroll td:first-child{min-width:120px}
+
+/* ---------- checklist board ---------- */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:14px;margin:22px 0 26px}
+.chk{background:var(--surface);border-radius:var(--radius);padding:20px 22px}
+.chk h5{margin:0 0 12px;font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.chk ul{list-style:none;margin:0;padding:0}
+.chk li{position:relative;padding-left:26px;margin-bottom:10px;font-size:14.5px;line-height:1.5}
+.chk li:last-child{margin-bottom:0}
+.chk li::before{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;
+  border:1.5px solid var(--rule2);border-radius:4px}
+
+.lede{background:var(--surface);border-radius:var(--radius);padding:22px 26px;margin:22px 0 30px}
+.lede p{margin:0 0 9px;max-width:60ch;font-size:15.5px;line-height:1.62}
+.lede p:first-child{font-size:17px;color:var(--ink)}
+.lede p:last-child{margin-bottom:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px;max-width:none}
+.chips .lbl{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);margin-right:4px}
+.chips code{background:var(--surface);color:var(--ink2);
+  border:1.5px solid var(--rule2);padding:4px 13px}
+.chips.own code{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+.todo{display:inline-block;background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:2px 10px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;vertical-align:1px}
+
+.ft{border-top:1px solid var(--rule2);padding:38px clamp(20px,5vw,48px) 56px}
+.ft-in{max-width:780px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:baseline}
+.ft .u{font-size:11.5px;color:var(--ink3)}
+.ft .next{margin-left:auto;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:-.015em}
+.ft .next:hover{text-decoration:underline;text-underline-offset:4px}
+
+@media print{
+  .ann,.hdr,.cta,.toc,.ft{display:none}
+  body{background:#fff}
+  .scroll,blockquote,.chk{background:#fff;border:1px solid #ddd}
+  .check{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="ann"><span>1차 기획안 기준 초안 · 처방과 임상 확정 후 갱신 → <b>스케일러</b></span></div>
+
+<header class="hdr">
+  <div class="mark">ROOTLAB<sup>™</sup></div>
+  <nav class="hnav"><a href="01-campaign.html" aria-current="page">캠페인</a><a href="02-scaler.html">스케일러</a><a href="03-shampoo.html">샴푸</a><a href="04-treatment.html">트리트먼트</a></nav>
+  <a class="cta" href="02-scaler.html">스케일러</a>
+</header>
+
+<section class="hero">
+  <span class="badge">크리에이터 배포용 · 공통</span>
+  <h1>캠페인</h1>
+  <div class="sub">SUNDAY 3-STEP</div>
+  <p class="intro">크리에이터 전원이 함께 보는 페이지입니다. 세 제품에 공통인 촬영 조건과 필수 장면, CTA만 담았습니다.</p>
+</section>
+
+<main class="body">
+  <div class="col">
+    <nav class="toc"><span class="u">목차</span><ol><li><a href="#d0s0">THEME : SUNDAY 3-STEP 🏺</a></li><li><a href="#d0s1">Mandatory Scenes</a></li><li><a href="#d0s2">Call-To-Action</a></li><li><a href="#d0s3">Product Guides</a></li><li><a href="#d0s4">내 가이드</a></li><li><a href="#d0s5">Optional Post &amp; Story Ideas</a></li></ol></nav>
+    <h2 id="d0s0"><strong>THEME : SUNDAY 3-STEP 🏺</strong></h2>
+<div class="lede"><p>🏺 <strong>바르는 장면, 헹구는 장면, 씻고 난 뒤. 이 세 개를 보여주세요.</strong></p>
+<p>🏺 게시일은 <strong>일요일</strong> — 스케일링 하는 날, 20명이 같은 날 올립니다</p>
+<p>🏺 어깨에 <strong>ROOTLAB 타월</strong>을 걸고 촬영 (시딩 박스 동봉 · 샌드 컬러)</p>
+<p>🏺 <strong>ASMR</strong> — 배경음악 없이, 제형·거품·헹굼의 실제 소리만</p>
+<p>🏺 보정 필터 없이, 욕실 조명 그대로</p>
+<p>🏺 배정받은 제품 가이드를 보고 자유롭게 만들어 주세요. 아래 공통 장면과 CTA만 넣어주시면 됩니다.</p>
+</div><h3 id="d0s1">Mandatory Scenes</h3>
+<p>세 제품 모두 공통입니다. 순서·길이·대사는 자유이고, 아래가 화면에서 <strong>식별 가능하게</strong> 나오기만 하면 됩니다.</p>
+<ul>
+<li><strong>제형을 덜어서 보여주는 모습</strong><ul>
+<li>손이나 투명한 표면 위에. 색, 점도가 보이도록 천천히</li>
+</ul>
+</li>
+<li><strong>바르고 문지르는 모습</strong><ul>
+<li>손끝으로. 손톱으로 긁는 연출은 하지 말아주세요</li>
+</ul>
+</li>
+<li><strong>실제로 헹구는 모습</strong><ul>
+<li>편집 최소화. 남는지 여부가 보이게</li>
+</ul>
+</li>
+<li><strong>씻고 난 두피와 모발</strong><ul>
+<li>젖은 모발 손가락 빗질, 가능하면 말린 뒤까지</li>
+</ul>
+</li>
+<li><strong>본인 이야기 두 번</strong><ul>
+<li>왜 써봤는지 / 어땠는지. "제 두피에서는" 처럼</li>
+</ul>
+</li>
+</ul>
+<p><strong>말할 때만 찍으면 되는 장면</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>이렇게 말한다면</th>
+<th>이 화면이 필요합니다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"헹굼이 편하다"</td>
+<td>편집 안 한 헹굼 컷</td>
+</tr>
+<tr>
+<td>"잔여물이 없다"</td>
+<td>헹군 뒤 손으로 두피를 훑는 컷</td>
+</tr>
+<tr>
+<td>"모발이 부드럽다"</td>
+<td>젖은 상태 + 말린 뒤 손가락 빗질</td>
+</tr>
+<tr>
+<td>"거품이 잘 난다"</td>
+<td>적은 양으로 거품 내는 컷</td>
+</tr>
+<tr>
+<td>"시원하다"</td>
+<td>언제부터, 얼마나 시원한지 말하는 컷</td>
+</tr>
+<tr>
+<td>"자극이 없다" · "무자극"</td>
+<td>시험 진행 중이라 지금은 쓰지 않습니다</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>🏺 <strong>세 제품을 같이 쓰면 더 좋다는 말은 하지 말아주세요.</strong> 단계별 시험이 아직 진행 중입니다. 순서대로 쓰는 장면은 자유롭게 보여주셔도 됩니다.</p>
+</blockquote>
+<h3 id="d0s2">Call-To-Action</h3>
+<p><strong>영상 마지막을 이런 식의 한마디로 마무리해 주세요 :</strong></p>
+<p><em>"일요일 감는 날 루틴, 댓글로 알려주세요."</em></p>
+<p><em>"본인 두피 타입 댓글 달아주세요. 저랑 비슷한지 궁금해요."</em></p>
+<p><em>"이번 주 일요일에 같이 할 사람?"</em></p>
+<blockquote>
+<p>🏺 <strong>캡션에 @rootlab_official 태그, <code>#광고</code> 표기는 '더보기' 이전에 보이는 위치에.</strong></p>
+</blockquote>
+<h3 id="d0s3">Product Guides</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>순서</th>
+<th>제품</th>
+<th>컨셉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STEP 1</strong></td>
+<td>카올린 퓨리파잉 두피 스케일러</td>
+<td><strong>SCALE-DOWN</strong> — 모공 속 노폐물까지</td>
+</tr>
+<tr>
+<td><strong>STEP 2</strong></td>
+<td>클레이 딥클렌징 샴푸</td>
+<td><strong>CLEANSE-DOWN</strong> — 유분과 각질을</td>
+</tr>
+<tr>
+<td><strong>STEP 3</strong></td>
+<td>식물성 단백질 트리트먼트</td>
+<td><strong>PROTEIN-FILL</strong> — 비어 있는 큐티클을</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d0s4">내 가이드</h3>
+<p>크리에이터별로 아래 항목을 각자 받습니다.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>배정 제품</td>
+<td>스케일러 / 샴푸 / 트리트먼트</td>
+</tr>
+<tr>
+<td>게시 시간대</td>
+<td>오전(스케일러) · 오후(샴푸) · 저녁(트리트먼트)</td>
+</tr>
+<tr>
+<td>제출 기한</td>
+<td><span class="todo">입력 필요</span></td>
+</tr>
+<tr>
+<td>게시일</td>
+<td>일요일 <span class="todo">입력 필요</span></td>
+</tr>
+<tr>
+<td>내 추적 링크</td>
+<td><span class="todo">입력 필요</span></td>
+</tr>
+<tr>
+<td>할인 코드</td>
+<td><span class="todo">입력 필요</span></td>
+</tr>
+<tr>
+<td>콘텐츠 사용권</td>
+<td><span class="todo">입력 필요</span></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="d0s5">Optional Post &amp; Story Ideas</h3>
+<ul>
+<li>두피 ASMR 레퍼런스 — <span class="todo">입력 필요</span></li>
+<li>감는 날 3스텝 릴레이 — <span class="todo">입력 필요</span></li>
+<li>시딩 박스 언박싱 — <span class="todo">입력 필요</span></li>
+</ul>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="ft-in">
+    <span class="u">ROOTLAB™ · SUNDAY 3-STEP</span>
+    <span class="u">입력 필요 8곳</span>
+    <a class="next" href="02-scaler.html">스케일러 ›</a>
+  </div>
+</footer>
+
+</body>
+</html>

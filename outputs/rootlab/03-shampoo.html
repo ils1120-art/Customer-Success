@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROOTLAB — 샴푸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#E9E3D8;
+  --surface:#F6F2EA;
+  --surface2:#FFFDF8;
+  --ink:#231D16;
+  --ink2:#6B5F51;
+  --ink3:#9A8E7E;
+  --rule:#DAD1C2;
+  --rule2:#C8BDAA;
+  --accent:#A57E44;
+  --accent-ink:#FFFDF8;
+  --radius:14px;
+  color-scheme:light;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17140F; --surface:#211D17; --surface2:#2A251E;
+  --ink:#F2ECE1; --ink2:#B3A796; --ink3:#857B6C;
+  --rule:#332D25; --rule2:#453D32;
+  --accent:#E0BC7E; --accent-ink:#17140F;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Archivo","Noto Sans KR",system-ui,sans-serif;
+  font-size:16px;line-height:1.72;letter-spacing:-.011em;word-break:keep-all;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.u{font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+
+.ann{background:var(--accent);color:var(--accent-ink);text-align:center;padding:9px 20px}
+.ann span{font-size:13.5px;font-weight:700;letter-spacing:-.005em}
+.ann b{text-decoration:underline;text-underline-offset:3px;font-weight:800}
+
+.hdr{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px clamp(20px,4vw,48px)}
+.mark{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:105%;
+  font-size:19px;letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+.mark sup{font-size:.5em;vertical-align:super;font-weight:700}
+.hnav{display:flex;gap:20px;flex-wrap:wrap;margin-left:12px}
+.hnav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink2);
+  letter-spacing:-.015em;white-space:nowrap}
+.hnav a:hover{color:var(--ink)}
+.hnav a[aria-current]{color:var(--ink);font-weight:700}
+.cta{margin-left:auto;display:inline-block;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:11px 22px;font-size:13.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.cta:hover{filter:brightness(1.08)}
+
+.hero{text-align:center;padding:clamp(40px,7vw,86px) clamp(20px,5vw,48px) clamp(34px,5vw,60px)}
+.badge{display:inline-block;background:var(--ink);color:var(--bg);
+  border-radius:999px;padding:7px 16px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:clamp(24px,4vw,40px)}
+.hero h1{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:800;font-stretch:100%;
+  font-size:clamp(38px,8vw,92px);line-height:.96;letter-spacing:-.045em;margin:0;text-wrap:balance}
+.hero .sub{font-family:"Archivo","Noto Sans KR",sans-serif;font-weight:700;
+  font-size:clamp(19px,3.2vw,34px);line-height:1.18;letter-spacing:-.03em;
+  margin-top:clamp(14px,2vw,22px);color:var(--accent);text-wrap:balance}
+.hero .intro{max-width:46ch;margin:clamp(28px,5vw,54px) auto 0;
+  font-size:clamp(16px,1.9vw,18px);line-height:1.62;color:var(--ink2)}
+
+.body{padding:0 clamp(20px,5vw,48px) 110px}
+.col{max-width:780px;margin:0 auto}
+
+.toc{background:var(--surface);border-radius:var(--radius);padding:26px 28px;margin-bottom:clamp(40px,6vw,64px)}
+.toc .u{font-size:11.5px;color:var(--ink3);display:block;margin-bottom:14px}
+.toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:32px}
+@media(max-width:640px){.toc ol{columns:1}}
+.toc li{break-inside:avoid;margin-bottom:7px}
+.toc a{text-decoration:none;font-size:14.5px;color:var(--ink2);line-height:1.45;display:block}
+.toc a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+h2,h3,h4{font-family:"Archivo","Noto Sans KR",sans-serif;letter-spacing:-.032em;text-wrap:balance}
+h2{font-size:clamp(26px,4.2vw,40px);font-weight:800;line-height:1.06;margin:clamp(52px,8vw,86px) 0 20px}
+h3{font-size:clamp(20px,2.6vw,27px);font-weight:700;line-height:1.16;margin:52px 0 14px;
+   padding-top:20px;border-top:1px solid var(--rule2)}
+h4{font-size:17px;font-weight:700;margin:30px 0 10px;letter-spacing:-.022em}
+p{margin:0 0 16px;max-width:66ch}
+ul,ol{margin:0 0 18px;padding-left:22px;max-width:66ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink3)}
+strong{font-weight:700}
+em{font-style:normal;color:var(--ink2);background:var(--surface);
+   border-radius:8px;padding:3px 10px;display:inline-block;margin:2px 0}
+hr{border:0;border-top:1px solid var(--rule2);margin:56px 0}
+
+blockquote{background:var(--surface2);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius) var(--radius) 0;
+  margin:26px 0;padding:22px 26px;color:var(--ink2);font-size:15.5px;max-width:none}
+blockquote p{margin-bottom:10px;max-width:60ch}
+blockquote p:last-child{margin-bottom:0}
+blockquote strong{color:var(--ink)}
+
+code{font-family:"Archivo",sans-serif;font-weight:700;font-size:.88em;
+  background:var(--surface);color:var(--ink2);
+  border-radius:999px;padding:3px 12px;white-space:nowrap;letter-spacing:-.01em}
+
+.scroll{background:var(--surface);border-radius:var(--radius);
+  padding:6px 24px 10px;margin:22px 0 30px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:14.5px;line-height:1.55;
+  font-variant-numeric:tabular-nums}
+thead th{text-align:left;font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);
+  padding:18px 18px 12px 0;border-bottom:1px solid var(--rule);white-space:nowrap;vertical-align:bottom}
+tbody td{padding:15px 18px 15px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+th:last-child,td:last-child{padding-right:0}
+.scroll th:first-child,.scroll td:first-child{min-width:120px}
+
+/* ---------- checklist board ---------- */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:14px;margin:22px 0 26px}
+.chk{background:var(--surface);border-radius:var(--radius);padding:20px 22px}
+.chk h5{margin:0 0 12px;font-family:"Archivo","Noto Sans KR",sans-serif;
+  font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.chk ul{list-style:none;margin:0;padding:0}
+.chk li{position:relative;padding-left:26px;margin-bottom:10px;font-size:14.5px;line-height:1.5}
+.chk li:last-child{margin-bottom:0}
+.chk li::before{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;
+  border:1.5px solid var(--rule2);border-radius:4px}
+
+.lede{background:var(--surface);border-radius:var(--radius);padding:22px 26px;margin:22px 0 30px}
+.lede p{margin:0 0 9px;max-width:60ch;font-size:15.5px;line-height:1.62}
+.lede p:first-child{font-size:17px;color:var(--ink)}
+.lede p:last-child{margin-bottom:0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px;max-width:none}
+.chips .lbl{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);margin-right:4px}
+.chips code{background:var(--surface);color:var(--ink2);
+  border:1.5px solid var(--rule2);padding:4px 13px}
+.chips.own code{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+.todo{display:inline-block;background:var(--accent);color:var(--accent-ink);
+  border-radius:999px;padding:2px 10px;font-size:11.5px;
+  font-family:"Archivo",sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;vertical-align:1px}
+
+.ft{border-top:1px solid var(--rule2);padding:38px clamp(20px,5vw,48px) 56px}
+.ft-in{max-width:780px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:baseline}
+.ft .u{font-size:11.5px;color:var(--ink3)}
+.ft .next{margin-left:auto;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:-.015em}
+.ft .next:hover{text-decoration:underline;text-underline-offset:4px}
+
+@media print{
+  .ann,.hdr,.cta,.toc,.ft{display:none}
+  body{background:#fff}
+  .scroll,blockquote,.chk{background:#fff;border:1px solid #ddd}
+  .check{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="ann"><span>1차 기획안 기준 초안 · 처방과 임상 확정 후 갱신 → <b>트리트먼트</b></span></div>
+
+<header class="hdr">
+  <div class="mark">ROOTLAB<sup>™</sup></div>
+  <nav class="hnav"><a href="01-campaign.html">캠페인</a><a href="02-scaler.html">스케일러</a><a href="03-shampoo.html" aria-current="page">샴푸</a><a href="04-treatment.html">트리트먼트</a></nav>
+  <a class="cta" href="04-treatment.html">트리트먼트</a>
+</header>
+
+<section class="hero">
+  <span class="badge">제품 가이드 · STEP 2</span>
+  <h1>샴푸</h1>
+  <div class="sub">CLEANSE-DOWN</div>
+  <p class="intro">클레이 딥클렌징 샴푸를 배정받은 크리에이터가 보는 페이지입니다.</p>
+</section>
+
+<main class="body">
+  <div class="col">
+    <nav class="toc"><span class="u">목차</span><ol><li><a href="#d2s0">ROOTLAB 브랜드 소개</a></li><li><a href="#d2s1">이 제품을 고르는 이유</a></li><li><a href="#d2s2">뭐가 들었나?</a></li><li><a href="#d2s3">어떻게 쓰나?</a></li><li><a href="#d2s4">이건 꼭 확인해 주세요</a></li><li><a href="#d2s5">Quick Facts</a></li><li><a href="#d2s6">이 제품을 설명한 영상</a></li></ol></nav>
+    <blockquote>
+<p><strong>루트랩 클레이 딥클렌징 샴푸</strong> · 500ml / 19,800원 · 2027년 1월 출시</p>
+</blockquote>
+<p><strong>제품 이미지</strong> — 직선형 실린더, 불투명 무광 <span class="todo">입력 필요</span></p>
+<h3 id="d2s0">ROOTLAB 브랜드 소개</h3>
+<p><strong>ROOTLAB</strong>은 스킨케어 성분을 헤어케어에 접목한 <strong>스칼프-바이오 브랜드</strong>입니다.
+두피 저자극과 쿨링에서 출발해, 이번에 모발까지 케어 범위를 넓혔습니다.</p>
+<p><strong>브랜드가 지키는 것</strong></p>
+<ul>
+<li><strong>두피도 피부다</strong> — 얼굴에 쓰는 기준을 두피에 적용</li>
+<li><strong>실리콘으로 덮지 않는다</strong> — 코팅이 아니라 채우는 방식</li>
+<li><strong>긁어내지 않는다</strong> — 소금·스크럽 입자 없이</li>
+</ul>
+<h3 id="d2s1">이 제품을 고르는 이유</h3>
+<p>오후만 되면 뿌리부터 떡지는 두피를 위한 샴푸입니다.</p>
+<ul>
+<li><strong>카올린이 과잉 유분만 골라서 흡착</strong> — 다 벗겨내지 않습니다</li>
+<li><strong>거품이 풍성하게 납니다</strong> — 딥클렌징인데 거품을 포기하지 않았습니다</li>
+<li><strong>실리콘 프리</strong> — 코팅으로 부드럽게 만들지 않습니다</li>
+</ul>
+<h3 id="d2s2">뭐가 들었나?</h3>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>성분</th>
+<th>무슨 일을 하나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>카올린 클레이</strong></td>
+<td>입자가 고운 흰 진흙. 과잉 유분과 각질을 붙잡습니다</td>
+</tr>
+<tr>
+<td><strong>아미노산계 계면활성제</strong></td>
+<td>거품은 내되 세정은 순하게</td>
+</tr>
+<tr>
+<td><strong>병풀 추출물 · 알란토인</strong></td>
+<td>씻는 동안 두피를 진정시킵니다</td>
+</tr>
+<tr>
+<td><strong>판테놀</strong></td>
+<td>세정 후 두피와 모발이 건조해지지 않게</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>제형</strong> 고밀도 거품 타입 · <strong>향</strong> 은은한 허브 계열 · <strong>실리콘 프리</strong></p>
+<h3 id="d2s3">어떻게 쓰나?</h3>
+<ul>
+<li>젖은 모발에 500원 동전 크기로 덜기</li>
+<li>손에서 거품을 낸 뒤 두피에 올리기</li>
+<li>손끝으로 1분 마사지</li>
+<li>유분이 많은 날은 2회 세정</li>
+<li>헹구기. 끝 🚿</li>
+</ul>
+<h3 id="d2s4">이건 꼭 확인해 주세요</h3><div class="check"><div class="chk"><h5>덜 때</h5><ul>
+<li>향</li>
+<li>제형 — 흐르는지, 농도가 있는지</li>
+</ul></div><div class="chk"><h5>거품 낼 때</h5><ul>
+<li>적은 양으로도 거품이 나는지</li>
+<li>거품 밀도</li>
+<li>두피에서 퍼지는 정도</li>
+</ul></div><div class="chk"><h5>씻을 때</h5><ul>
+<li>세정감</li>
+<li>청량감</li>
+<li>가려운 느낌이 있는지</li>
+</ul></div><div class="chk"><h5>씻고 나서</h5><ul>
+<li>두피 당김</li>
+<li>젖은 모발이 뻣뻣한지</li>
+<li>말린 뒤 뿌리 볼륨</li>
+<li>오후까지 어떤지</li>
+</ul></div></div>
+
+
+
+
+<p class="chips own"><span class="lbl">이 제품만의 말</span> <code>거품</code> <code>볼륨감</code></p>
+<p class="chips shared"><span class="lbl">같이 쓰는 말</span> <code>세정력</code> <code>시원함</code> <code>부드러움</code></p>
+<blockquote>
+<p>🫧 <strong>딥클렌징 샴푸의 흔한 불만은 "씻고 나면 뻣뻣하다"입니다.</strong> 헹군 직후 젖은 모발 상태를 꼭 보여주세요. 가능하면 오후까지 지나고 나서 뿌리도요.</p>
+</blockquote>
+<h3 id="d2s5">Quick Facts</h3>
+<p><strong>확인된 것</strong></p>
+<ul>
+<li>실리콘 프리</li>
+<li>카올린 클레이 배합</li>
+<li>아미노산계 계면활성제</li>
+</ul>
+<p><strong>아직 안 쓰는 표현</strong> — 시험 진행 중입니다</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>표현</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무자극 · 저자극</td>
+<td>두피 자극 시험 예정</td>
+</tr>
+<tr>
+<td>두피 피지 감소 · 각질 감소 수치</td>
+<td>목표 수치는 측정 후 설정</td>
+</tr>
+<tr>
+<td>정수리 냄새 제거</td>
+<td>두피 취 저감 시험 예정</td>
+</tr>
+<tr>
+<td>탈모 예방 · 두피 강화 · 비듬 개선</td>
+<td>기능성 미보유</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>해시태그</strong> <code>#클레이샴푸</code> <code>#두피딥클렌징</code> <code>#떡짐케어</code> <code>#지성두피샴푸</code> <code>#실리콘프리</code></p>
+<h3 id="d2s6">이 제품을 설명한 영상</h3>
+<ul>
+<li><span class="todo">입력 필요</span></li>
+</ul>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="ft-in">
+    <span class="u">ROOTLAB™ · SUNDAY 3-STEP</span>
+    <span class="u">입력 필요 2곳</span>
+    <a class="next" href="04-treatment.html">트리트먼트 ›</a>
+  </div>
+</footer>
+
+</body>
+</html>
